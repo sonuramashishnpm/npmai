@@ -1,5 +1,6 @@
 <h1 align="center">🤖 npmai-module</h1>
-
+<h3>Use By this:-<h6>```bash
+  pip install git+https://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@github.com/sonuramashishnpm/npmai.git</h6></h3>
 <p align="center">
   <b>Access multiple LLMs for FREE — no API key required!</b><br>
   <i>Developed & Maintained by <b>Sonu Kumar (Viral Boy)</b></i>
@@ -46,4 +47,4 @@
 <div align="center">
 
 ```bash
-pip install npmai
+pip install git+https://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@github.com/sonuramashishnpm/npmai.git
