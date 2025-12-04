@@ -1,10 +1,10 @@
 npmai
 
-npmai (by Sonu Kumar Ramashish) is a lightweight Python package that seamlessly connects LangChain with real-time web-based LLMs like Gemini, ChatGPT, Grok, and Perplexity via Selenium automation.
+npmai (by Sonu Kumar Ramashish) is a lightweight Python package that seamlessly connects LangChain with real-time web-based LLMs like Gemini, ChatGPT, Grok, Mistral and Perplexity via Selenium automation.
 
 🚀 Features
 
-Execute prompts on multiple LLMs simultaneously: Gemini, ChatGPT, Grok, Perplexity.
+Execute prompts on multiple LLMs simultaneously: Gemini, ChatGPT, Grok, Perplexity, Mistral.
 
 Fully LangChain-compatible interface.
 
@@ -14,11 +14,9 @@ Browser automation with headless Chrome via Selenium.
 
 Supports continuous conversation mode for long-running interactions with ChatGPT or Gemini.
 
-Encourages responsible usage—please respect AI companies like OpenAI, Google, X AI, Perplexity, and support them if used at scale.
+Encourages responsible usage—please respect AI companies like OpenAI, Google, X AI, Perplexity, Mistral and support them if used at scale.
 
-⚙️ Installation
-pip install npmai
-
+⚙️ Installation pip install npmai
 
 Tip: For Python 3.13, make sure to use:
 
@@ -28,21 +26,17 @@ py -3.13 -m pip install npmai
 
 Import the models you need—either one, two, or all:
 
-from npmai import ChatGPT, Grok, Perplexity, Gemini, GeminiAIMode,Image
-
+from npmai import ChatGPT, Grok, Perplexity, Gemini, GeminiAIMode,Image,Mistral
 
 Initialize a model:
 
-llm = ChatGPT()       # or Gemini(), Grok(), Perplexity(),Image()
-
+llm = ChatGPT() # or Gemini(), Grok(), Perplexity(),Image(),Mistral()
 
 Invoke a prompt and get the response:
 
-response = llm.invoke("Your prompt here")
-print(response) 
+response = llm.invoke("Your prompt here") print(response)
 
-#Latest Update :
-version 0.0.5 Here you will get models that can generate Images also.
+#Latest Update : version 0.0.7 Here you will get Mistral also.
 
 ⚠️ Important Notes
 
