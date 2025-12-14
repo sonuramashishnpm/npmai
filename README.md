@@ -1,10 +1,10 @@
 npmai
 
-npmai (by Sonu Kumar Ramashish) is a lightweight Python package that seamlessly connects LangChain with real-time web-based LLMs like Gemini, ChatGPT, Grok, Mistral and Perplexity via Selenium automation.
+npmai (by Sonu Kumar Ramashish) is a lightweight Python package that seamlessly connects LangChain with real-time web-based LLMs like Gemini, ChatGPT, Grok, Mistral and Perplexity and a IMage Generation model via Selenium automation.
 
 🚀 Features
 
-Execute prompts on multiple LLMs simultaneously: Gemini, ChatGPT, Grok, Perplexity, Mistral.
+Execute prompts on multiple LLMs simultaneously: Gemini, ChatGPT, Grok, Perplexity, Mistral, Image.
 
 Fully LangChain-compatible interface.
 
@@ -18,23 +18,48 @@ Encourages responsible usage—please respect AI companies like OpenAI, Google, 
 
 ⚙️ Installation pip install npmai
 
-Tip: For Python 3.13, make sure to use:
-
-py -3.13 -m pip install npmai
+pip install npmai
 
 💡 How to Use
 
 Import the models you need—either one, two, or all:
 
-from npmai import ChatGPT, Grok, Perplexity, Gemini, GeminiAIMode,Image,Mistral
+To use:
+1.ChatGPT:
+from npmai import ChatGPT
+llm=ChatGPT()
+print(llm.invoke("Hello GPT how are you"))
 
-Initialize a model:
+2.Gemini:
+from npmai import Gemini
+llm=Gemini()
+print(llm.invoke("Hello Gemini what's today news"))
 
-llm = ChatGPT() # or Gemini(), Grok(), Perplexity(),Image(),Mistral()
+3.Grok:
+from npmai import Grok
+llm=Grok()
+print(llm.invoke("Hello Grok what is calculus and who was euclid"))
 
-Invoke a prompt and get the response:
+4.Perplexity:
+from npmai import Perplexity
+llm=Perplexity()
+print(llm.invoke("Hello perplexity what do you think about recent news about USA Donald Trump"))
 
-response = llm.invoke("Your prompt here") print(response)
+5.Mistral:
+from npmai import Mistral
+llm=Mistral()
+print(llm.invoke("Hello mist write a pythond code using turtle that animate a tree"))
+
+6.GeminiAIMode:
+from npmai import GeminiAIMode
+llm=GeminiAIMode()
+print(llm.invoke("Hello can you who developer npmai library"))
+
+7.Image:
+from npmai import Image
+llm=Image()
+print(llm.invoke("Hey generate a image in that a dog is standing on moon"))
+
 
 #Latest Update : version 0.0.7 Here you will get Mistral also.
 
