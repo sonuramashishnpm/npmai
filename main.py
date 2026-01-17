@@ -18,16 +18,16 @@ class LLMRequest(BaseModel):
 Model_in_Use=[]
 
 Model_links = {
-    "llama3.2": "https://surrey-representations-intensity-node.trycloudflare.com/llm" ,
-    "codellama:7b-instruct":"",
-    "gemma2:9b":"",
-    "mistral:7b":"",
-    "qwen2.5-coder:7b":"",
-    "phi3:medium":"",
-    "falcon:7b-instruct":"",
-    "maxkb/baichuan2:13b-chat":"",
-    "internlm2:7b":"",
-    "vicuna:7b":"",
+    "llama3.2": "https://influences-shoe-installing-written.trycloudflare.com/llm" ,
+    "codellama:7b-instruct":"https://influences-shoe-installing-written.trycloudflare.com",
+    "gemma2:9b":"https://influences-shoe-installing-written.trycloudflare.com",
+    "mistral:7b":"https://influences-shoe-installing-written.trycloudflare.com",
+    "qwen2.5-coder:7b":"https://influences-shoe-installing-written.trycloudflare.com",
+    "phi3:medium":"https://influences-shoe-installing-written.trycloudflare.com",
+    "falcon:7b-instruct":"https://influences-shoe-installing-written.trycloudflare.com",
+    "maxkb/baichuan2:13b-chat":"https://influences-shoe-installing-written.trycloudflare.com",
+    "internlm2:7b":"https://influences-shoe-installing-written.trycloudflare.com",
+    "vicuna:7b":"https://influences-shoe-installing-written.trycloudflare.com",
 }
 
 
