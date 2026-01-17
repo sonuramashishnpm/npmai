@@ -12,7 +12,7 @@ app = FastAPI()
 class LLMRequest(BaseModel):
     prompt: str
     model: str
-    temperature: float = 0.7
+    temperature: float = 0.3
     validated_schema: Optional[Dict[str, Any]] = None
 
 Model_in_Use=[]
