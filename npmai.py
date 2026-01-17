@@ -7,7 +7,7 @@ PromptType = Union[str, List[str], dict]
 
 class Ollama(LLM):
     model: str = "llama3.2"
-    temperature: float = 0.7
+    temperature: float = 0.3
     validated_schema: Optional[Dict[str,Any]]=None
     api: str = "https://npmai-api.onrender.com/llm"
 
