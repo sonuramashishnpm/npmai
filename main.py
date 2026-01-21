@@ -39,7 +39,7 @@ timeout = httpx.Timeout(
 
 @app.post("/llm")
 async def handler(data: LLMRequest):
-    if len(data.prompt) >= 20000:
+    if len(data.prompt) >= 50000:
         raise HTTPException(400, "Prompt too long")
 
     if data.model not in Model_links:
