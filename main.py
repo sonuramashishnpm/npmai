@@ -49,7 +49,7 @@ async def handler(data: LLMRequest):
           async with httpx.AsyncClient() as client:
             response = await client.post(url, json=payload)
         except Exception as e:
-          return "Sorry some problem in server."
+          return e
         finally:
           if data.model in Model_in_Use:
             Model_in_Use.remove(data.model)
