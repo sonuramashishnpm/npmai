@@ -30,7 +30,12 @@ Model_links = {
     "vicuna:7b":"https://swimming-large-wedding-conscious.trycloudflare.com/llm",
 }
 
-
+timeout = httpx.Timeout(
+    connect=10.0,  # connection ka max time
+    read=120.0,    # response read karne ka max time
+    write=10.0,    # request bhejne ka max time
+    pool=60.0      # connection pool wait
+)
 
 @app.post("/llm")
 async def handler(data: LLMRequest):
@@ -46,7 +51,7 @@ async def handler(data: LLMRequest):
         url = Model_links[data.model]
 
         try:
-          async with httpx.AsyncClient() as client:
+          async with httpx.AsyncClient(timeout=timeout) as client:
             response = await client.post(url, json=payload)
         except Exception as e:
           return e
