@@ -18,7 +18,7 @@ class LLMRequest(BaseModel):
 Model_in_Use=[]
 
 Model_links = {
-    "llama3.2": "https://swimming-large-wedding-conscious.trycloudflare.com/llm" ,
+    "llama3.2": "https://sonuramashish22028704-npmai.hf.space/llm",
     "codellama:7b-instruct":"https://swimming-large-wedding-conscious.trycloudflare.com/llm",
     "gemma2:9b":"https://swimming-large-wedding-conscious.trycloudflare.com/llm",
     "mistral:7b":"https://swimming-large-wedding-conscious.trycloudflare.com/llm",
