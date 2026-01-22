@@ -82,7 +82,7 @@ async def handler(data: LLMRequest):
                 Model_in_Use.append(model)
                 url=Model_links[model]
                 try:
-                    async with httpx.AsyncClient() as client:
+                    async with httpx.AsyncClient(timeout=timeout) as client:
                         response = await client.post(url, json=payload)
                 except:
                     return "Sorry some problem in server222."
