@@ -19,15 +19,15 @@ Model_in_Use=[]
 
 Model_links = {
     "llama3.2": "https://sonuramashish22028704-npmai.hf.space/llm",
-    "codellama:7b-instruct":"https://swimming-large-wedding-conscious.trycloudflare.com/llm",
-    "gemma2:9b":"https://swimming-large-wedding-conscious.trycloudflare.com/llm",
-    "mistral:7b":"https://swimming-large-wedding-conscious.trycloudflare.com/llm",
-    "qwen2.5-coder:7b":"https://swimming-large-wedding-conscious.trycloudflare.com/llm",
-    "phi3:medium":"https://swimming-large-wedding-conscious.trycloudflare.com/llm",
-    "falcon:7b-instruct":"https://swimming-large-wedding-conscious.trycloudflare.com/llm",
-    "maxkb/baichuan2:13b-chat":"https://swimming-large-wedding-conscious.trycloudflare.com/llm",
-    "internlm2:7b":"https://swimming-large-wedding-conscious.trycloudflare.com/llm",
-    "vicuna:7b":"https://swimming-large-wedding-conscious.trycloudflare.com/llm",
+    "codellama:7b-instruct":"https://sonuramashish22028704-npmai.hf.space/llm",
+    "gemma2:9b":"https://sonuramashish22028704-npmai.hf.space/llm",
+    "mistral:7b":"https://sonuramashish22028704-npmai.hf.space/llm",
+    "qwen2.5-coder:7b":"https://sonuramashish22028704-npmai.hf.space/llm",
+    "phi3:medium":"https://sonuramashish22028704-npmai.hf.space/llm",
+    "falcon:7b-instruct":"https://sonuramashish22028704-npmai.hf.space/llm",
+    "maxkb/baichuan2:13b-chat":"https://sonuramashish22028704-npmai.hf.space/llm",
+    "internlm2:7b":"https://sonuramashish22028704-npmai.hf.space/llm",
+    "vicuna:7b":"https://sonuramashish22028704-npmai.hf.space/llm",
 }
 
 timeout = httpx.Timeout(
