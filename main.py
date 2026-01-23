@@ -31,10 +31,10 @@ Model_links = {
 }
 
 timeout = httpx.Timeout(
-    connect=10.0,  # connection ka max time
-    read=120.0,    # response read karne ka max time
-    write=10.0,    # request bhejne ka max time
-    pool=60.0      # connection pool wait
+    connect=30.0,  # connection ka max time
+    read=360.0,    # response read karne ka max time
+    write=30.0,    # request bhejne ka max time
+    pool=120.0      # connection pool wait
 )
 
 @app.post("/llm")
