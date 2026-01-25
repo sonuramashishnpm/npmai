@@ -1,88 +1,155 @@
 npmai
 
-npmai (by Sonu Kumar Ramashish) is a lightweight Python package that seamlessly connects LangChain with real-time web-based LLMs like Gemini, ChatGPT, Grok, Mistral and Perplexity and a IMage Generation model via Selenium automation.
+npmai (by Sonu Kumar Ramashish) is a lightweight Python package that seamlessly connects you  with Ollama and 10 other open-source models without any Installation, Login/Signup or API problems.
 
 🚀 Features
 
-Execute prompts on multiple LLMs simultaneously: Gemini, ChatGPT, Grok, Perplexity, Mistral, Image.
+Execute prompts on multiple LLMs simultaneously:["LLaMA-3.2","CodeLLaMA-Instruct 7B","Gemma-2-Instruct 9B","Mistral 7B Instruct","Qwen-2.5-Coder 7B","Phi-3 Medium (8B)","Falcon 7B Instruct","Baichuan-2-7B","InternLM-Chat-7B","Vicuna 7B"]
 
-Fully LangChain-compatible interface.
+Fully LangChain,CrewAI and other -compatible interface.
 
-Simple and intuitive invoke() API for instant responses.
+Simple and intuitive invoke() for instant responses.
 
-Browser automation with headless Chrome via Selenium.
+Support continuous conversation.
 
-Supports continuous conversation mode for long-running interactions with ChatGPT or Gemini.
+Encourages responsible usage.
 
-Encourages responsible usage—please respect AI companies like OpenAI, Google, X AI, Perplexity, Mistral and support them if used at scale.
+#For documentation visit:- https://npmai.onrender.com
 
-⚙️ Installation pip install npmai
-
+⚙️ Installation
 pip install npmai
+
+
+Tip: For Python 3.13, make sure to use:
+
+py -3.13 -m pip install npmai
 
 💡 How to Use
 
-Import the models you need—either one, two, or all:
+for Documentation visit:- https://npmai.netlify.app or https://npmai.onrender.com
 
-To use:
-1.ChatGPT:
-from npmai import ChatGPT
+Basic Examples
+for Python:-
 
-llm=ChatGPT()
+1.Import npmai Module
+from npmai import Ollama
 
-print(llm.invoke("Hello GPT how are you"))
+Initialize Ollama:
 
-2.Gemini:
-from npmai import Gemini
+llm = Ollama()      
 
-llm=Gemini()
+prompts=""
 
-print(llm.invoke("Hello Gemini what's today news"))
+model="llama3.2" #you can keep other also
 
-3.Grok:
-from npmai import Grok
+Invoke a prompt and get the response:
 
-llm=Grok()
+response = llm.invoke(prompts,model)
+print(response) 
 
-print(llm.invoke("Hello Grok what is calculus and who was euclid"))
+#If you want to use npmai through other languages consider hitting this api endpoint:-
+https://npmai-api.onrender.com
 
-4.Perplexity:
-from npmai import Perplexity
+example:-
+with other languages
+#Java Script-
+async function callApi() {
+  const payload = {
+    prompt: "hey my name is sonu kumar what do you think about Narendra Modi",
+    model: "llama3.2",
+    temperature: 0.4,
+  };
 
-llm=Perplexity()
+  const response = await fetch("https://npmai-api.onrender.com/llm", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
 
-print(llm.invoke("Hello perplexity what do you think about recent news about USA Donald Trump"))
+  const data = await response.json();
+  console.log(data.response);
+}
 
-5.Mistral:
-from npmai import Mistral
+callApi();
 
-llm=Mistral()
+#C++
+#include <httplib.h>
+#include <nlohmann/json.hpp>
+#include <iostream>
 
-print(llm.invoke("Hello mist write a pythond code using turtle that animate a tree"))
+int main() {
+    httplib::Client cli("https://npmai-api.onrender.com");
+    nlohmann::json payload = {
+        {"prompt", "hey my name is sonu kumar what do you think about Narendra Modi"},
+        {"model", "llama3.2"},
+        {"temperature", 0.4}
+    };
 
-6.GeminiAIMode:
-from npmai import GeminiAIMode
+    auto res = cli.Post("/llm", payload.dump(), "application/json");
+    if (res) {
+        auto data = nlohmann::json::parse(res->body);
+        std::cout << data["response"] << std::endl;
+    }
+    return 0;
+}
 
-llm=GeminiAIMode()
+#Java
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 
-print(llm.invoke("Hello can you who developer npmai library"))
+public class Main {
+    public static void main(String[] args) throws Exception {
+        String json = "{\"prompt\": \"hey my name is sonu kumar what do you think about Narendra Modi\", \"model\": \"llama3.2\", \"temperature\": 0.4}";
+        
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://npmai-api.onrender.com/llm"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(json))
+                .build();
 
-7.Image:
-from npmai import Image
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        // Note: For simple output, print full body; for parsing, use a library like Jackson or Gson
+        System.out.println(response.body());
+    }
+}
 
-llm=Image()
+#C
+#include <stdio.h>
+#include <curl/curl.h>
 
-print(llm.invoke("Hey generate a image in that a dog is standing on moon"))
+int main(void) {
+    CURL *curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
 
+        const char *data = "{\"prompt\": \"hey my name is sonu kumar what do you think about Narendra Modi\", \"model\": \"llama3.2\", \"temperature\": 0.4}";
 
-#Latest Update : version 0.0.7 Here you will get Mistral also.
+        curl_easy_setopt(curl, CURLOPT_URL, "https://npmai-api.onrender.com/llm");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
+
+        CURLcode res = curl_easy_perform(curl);
+        if(res != CURLE_OK) fprintf(stderr, "Request failed: %s\n", curl_easy_strerror(res));
+
+        curl_easy_cleanup(curl);
+        curl_slist_free_all(headers);
+    }
+    return 0;
+}
+
+#Latest Update :
+version 0.1.2 Here in this version we added Memory concept so that you do not need to define memory concept and no need to rely on Agentic Frameworks for Memory.
 
 ⚠️ Important Notes
 
-Designed for educational and small-scale experimentation.
+Designed for educational ,small-scale experimentation, for demo projets and small scale users.
 
 If using at a larger scale, consider supporting the original AI platforms—they invest heavily in research and infrastructure.
 
-Continuous mode allows extended conversations, but use responsibly to avoid overloading web-based LLM services.
+use responsibly to help us.
 
-✅ npmai makes it effortless to connect web-based AI models with Python, bringing automation, experimentation, and LangChain integration together in a single, easy-to-use package.
+✅ npmai makes it effortless to connect Ollam models with Python, bringing automation, experimentation, and LangChain,Crew AI integration together in a single, easy-to-use package.
