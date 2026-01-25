@@ -2,6 +2,7 @@ from langchain_core.language_models.llms import LLM
 from typing import Optional, List, Union, Iterator, Dict, Any
 import requests
 import json
+import os
 
 PromptType = Union[str, List[str], dict]
 
@@ -68,4 +69,5 @@ if __name__ == "__main__":
         )
     prompts=input("Enter Your Query:")
     response=llm.invoke(prompts)
+
     print(response)
