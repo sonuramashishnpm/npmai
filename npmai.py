@@ -40,8 +40,8 @@ class Ollama(LLM):
         return self._call(prompt)
         
 class Memory:
-    def __init__(self, user_id):
-        self.filename = f"memory_{user_id}.json"
+    def __init__(self, user_custom_file):
+        self.filename = f"memory_{user_custom_file}.json"
 
     def save_context(self, user_input, ai_output):
         with open(self.filename, "a") as data:
