@@ -38,6 +38,27 @@ class Ollama(LLM):
             prompt = json.dumps(prompt)
 
         return self._call(prompt)
+        
+class Memory:
+    def __init__(self, user_id):
+        self.filename = f"memory_{user_id}.json"
+
+    def save_context(self, user_input, ai_output):
+        with open(self.filename, "a") as data:
+            json.dump({"Human": user_input, "AI": ai_output}, data)
+            data.write("\n")
+
+    def load_memory_variables(self):
+        string_history = ""
+        if os.path.exists(self.filename) and os.path.getsize(self.filename) > 0:
+            with open(self.filename, "r") as data:
+                for line in data:
+                    try:
+                        ldata = json.loads(line)
+                        string_history += f"Human: {ldata['Human']}\nAI: {ldata['AI']}\n"
+                    except json.JSONDecodeError:
+                        continue
+        return string_history
 
 # Call Code
 if __name__ == "__main__":
