@@ -77,7 +77,7 @@ nlohmann::json payload = {
 };
 auto res = cli.Post("/llm", payload.dump(), "application/json");
 
-🆕 Latest Update: Version 0.1.2
+🆕 Latest Update: Version 0.1.3
 We have introduced Native Memory! You no longer need to manually manage chat history or rely on complex Agentic frameworks. npmai now handles context persistence internally, allowing for seamless continuous conversations.
 ⚠️ Important Notes
 Experimental Use: This project is designed for educational purposes, small-scale experimentation, and demo projects.
@@ -87,3 +87,4 @@ Documentation: npmai.netlify.app
 API Endpoint: npmai-api.onrender.com
 Developed with ❤️ to make AI accessible to everyone.
 Developer and Maintainer:- Sonu Kumar
+
