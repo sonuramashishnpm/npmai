@@ -1,7 +1,7 @@
 # 🚀 npmai 
 **By Sonu Kumar Ramashish**
 
-[![PyPI version](https://img.shields.io)](https://pypi.org/project/npmai/0.1.2)
+[![PyPI version](https://img.shields.io)](https://pypi.org/project/npmai/0.1.3)
 [![License: MIT](https://img.shields.io)](https://opensource.org)
 
 `npmai` is a lightweight Python package designed to bridge the gap between users and open-source LLMs. Connect with **Ollama** and 10+ other powerful models instantly—**no installation, no login, and no API keys required.**
