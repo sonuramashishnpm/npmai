@@ -215,6 +215,12 @@
       </div>
 
       <div class="project-card">
+        <h3>NPM Journalist</h3>
+        <p>Complain govt without any fear :- No identity required to complain to any govt official</p>
+        <a href="https://npmjournalist.onrender.com" target="_blank" rel="noopener">View Project</a>
+      </div>
+
+      <div class="project-card">
         <h3>NPMVoiceAI</h3>
         <p>Voice-powered AI applications via NPMAI.</p>
         <a href="https://npmvoiceai.onrender.com/flask/" target="_blank" rel="noopener">View Project</a>
@@ -253,7 +259,7 @@
   <section class="counter-section" aria-labelledby="pypi">
     <h2 id="pypi" class="section-title">NPMAI on PyPI</h2>
     <p>Python package for easy LLM integration. 4k+ installations.</p>
-    <div class="counter">4,022+</div>
+    <div class="counter">4,790+</div>
     <p>Install via <a href="https://pypi.org/project/npmai" target="_blank" rel="noopener">PyPI</a> | Stats: <a href="https://pepy.tech/project/npmai" target="_blank" rel="noopener">Pepy.tech</a></p>
   </section>
 
@@ -263,6 +269,7 @@
 
     <div class="code-tabs" role="tablist" aria-label="Code examples">
       <button class="active" type="button">LLaMA-3.2</button>
+      <button class="button">Memory</button>
       <button type="button">Temperature uses</button>
       <button type="button">Validated_schema</button>
       <button type="button">CodeLLaMA-Instruct 7B</button>
@@ -287,7 +294,7 @@ from npmai import Ollama
 
 llm = Ollama(
         model="llama3.2",
-        temperature=0.7
+        temperature=0.5
 )
 prompts = "Hello, tell me a short summary of NPMAI"
 
@@ -298,12 +305,28 @@ print(result)
 
     <div class="code-block" style="display:none;">
       <pre>
+        #Memory
+        from npmai import Ollama,<b>Memory</b>
+
+        llm = Ollama(
+                 model="internlm:7b",
+                temperature=0.5
+             )
+        prompts="Hello my name is sonu kumar how are you"
+
+        result= llm.invoke(prompts)
+        print(result)
+      </pre>
+      <div>
+
+    <div class="code-block" style="display:none;">
+      <pre>
 # Using temperature
 from npmai import Ollama
 
 llm = Ollama(
         model="llama3.2",
-        temperature=0.7 # here passs your temperature parameter
+        temperature=0.5 # here passs your temperature parameter
 )
 prompts = "Hello, tell me a short summary of NPMAI"
 
