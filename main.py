@@ -22,7 +22,7 @@ Model_links = {
     "codellama:7b-instruct":"https://sonuramashish22028704-npmaicodellama.hf.space/llm",
     "gemma2:9b":"https://sonuramashish22028704-gemma29b.hf.space/llm",
     "mistral:7b":"https://sonuramashish22028704-mistral7b.hf.space/llm",
-    "qwen2.5-coder:7b":"https://sonuramashish22028704-qwen2.5coder7b.hf.space/llm",
+    "qwen2.5-coder:7b":"https://sonuramashish22028704-npmai.hf.space/qwen",
     "phi3:medium":"https://sonuramashish22028704-phi3medium.hf.space/llm",
     "falcon:7b-instruct":"https://sonuramashish22028704-falcon7binstruct.hf.space/llm",
     "maxkb/baichuan2:13b-chat":"https://sonuramashish22028704-maxkbbaichuan213bchat.hf.space/llm",
