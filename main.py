@@ -19,15 +19,15 @@ Model_in_Use=[]
 
 Model_links = {
     "llama3.2": "https://sonuramashish22028704-npmai.hf.space/llm",
-    "codellama:7b-instruct":"https://sonuramashish22028704-npmaicodellama.hf.space/llm",
-    "gemma2:9b":"https://sonuramashish22028704-vicuna7b.hf.space/gemma",
-    "mistral:7b":"https://sonuramashish22028704-mistral7b.hf.space/llm",
     "qwen2.5-coder:7b":"https://sonuramashish22028704-npmai.hf.space/qwen",
-    "phi3:medium":"https://sonuramashish22028704-phi3medium.hf.space/llm",
-    "falcon:7b-instruct":"https://sonuramashish22028704-falcon7binstruct.hf.space/llm",
-    "maxkb/baichuan2:13b-chat":"https://sonuramashish22028704-internlm27b.hf.space/baichuan",
-    "internlm2:7b":"https://sonuramashish22028704-internlm27b.hf.space/llm",
     "vicuna:7b":"https://sonuramashish22028704-vicuna7b.hf.space/llm",
+    "gemma2:9b":"https://sonuramashish22028704-vicuna7b.hf.space/gemma",
+    "internlm2:7b":"https://sonuramashish22028704-internlm27b.hf.space/llm",
+    "maxkb/baichuan2:13b-chat":"https://sonuramashish22028704-internlm27b.hf.space/baichuan",
+    "falcon:7b-instruct":"https://sonuramashish22028704-falcon7binstruct.hf.space/llm",
+    "codellama:7b-instruct":"https://sonuramashish22028704-falcon7binstruct.hf.space/codellama",
+    "mistral:7b":"https://sonuramashish22028704-mistral7b.hf.space/llm",
+    "phi3:medium":"https://sonuramashish22028704-phi3medium.hf.space/llm",
 }
 
 timeout = httpx.Timeout(
