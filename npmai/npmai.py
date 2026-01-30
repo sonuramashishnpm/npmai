@@ -61,6 +61,27 @@ class Memory:
                         continue
         return string_history
 
+class Rag:
+    def __init__(self, files,query=None,DB_PATH=None,):
+        self.files=files
+        self.query=query
+        self.db_path=DB_PATH
+    def send(self):
+        files=self.files
+        DB_PATH=self.db_path
+        query=self.query
+        data={"query":query,"DB_PATH":DB_PATH}
+        HF_API="https://sonuramashish22028704-npmeduai.hf.space/ingestion"
+        with open(files,"rb") as f:
+            file={"file":f}
+            res=requests.post(HF_API,data=data,files=file,timeout=600)
+            response=str(res)
+            try:
+                return {"response":res.json().get("response")}
+            except:
+                return res
+        
+
 # Call Code
 if __name__ == "__main__":
     llm=Ollama(
@@ -71,3 +92,4 @@ if __name__ == "__main__":
     response=llm.invoke(prompts)
 
     print(response)
+
