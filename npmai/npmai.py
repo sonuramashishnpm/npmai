@@ -62,15 +62,24 @@ class Memory:
         return string_history
 
 class Rag:
-    def __init__(self, files,query=None,DB_PATH=None,):
+    def __init__(self, files,query=None,DB_PATH=None,temperature=None,model=None):
         self.files=files
         self.query=query
         self.db_path=DB_PATH
+        self.temperature=temperature
+        self.model=model
     def send(self):
         files=self.files
         DB_PATH=self.db_path
         query=self.query
-        data={"query":query,"DB_PATH":DB_PATH}
+        model=self.model
+        temperature=self.temperature
+        data={
+            "query":query,
+            "DB_PATH":DB_PATH,
+            "temperature":temperature,
+            "model":model
+        }
         HF_API="https://sonuramashish22028704-npmeduai.hf.space/ingestion"
         with open(files,"rb") as f:
             file={"file":f}
@@ -92,4 +101,5 @@ if __name__ == "__main__":
     response=llm.invoke(prompts)
 
     print(response)
+
 
