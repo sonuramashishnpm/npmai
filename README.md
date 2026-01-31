@@ -1,5 +1,5 @@
 # 🚀 npmai 
-**By Sonu Kumar Ramashish**
+**By Sonu Kumar**
 
 [![PyPI version](https://img.shields.io)](https://pypi.org/project/npmai/0.1.3)
 [![License: MIT](https://img.shields.io)](https://opensource.org)
@@ -12,7 +12,8 @@
 
 - 🔗 **Zero Setup:** No local Ollama installation or complex API signups needed.
 - 🤖 **Multi-Model Support:** Execute prompts across 10+ open-source models simultaneously.
-- 🧠 **Built-in Memory:** (New in v0.1.2) Native memory support—no need for external Agentic frameworks.
+- 🧠 **Built-in Memory:** (New in v0.1.3) Native memory support—no need for external Agentic frameworks.
+- 🕵️‍♂️🔍📑 **RAG Frame-Work no need to install Whisper or any model locally,no need to write code for the pdf,image,video,yt-video to text  just use npmai
 - ⚡ **Framework Ready:** Fully compatible with **LangChain**, **CrewAI**, and other orchestration tools.
 - 🛠️ **Universal API:** Access via Python, JavaScript, C++, Java, or C.
 
@@ -80,11 +81,15 @@ auto res = cli.Post("/llm", payload.dump(), "application/json");
 🆕 Latest Update: Version 0.1.3
 We have introduced Native Memory! You no longer need to manually manage chat history or rely on complex Agentic frameworks. npmai now handles context persistence internally, allowing for seamless continuous conversations.
 ⚠️ Important Notes
+
+#WE ARE UPDATING npmai with RAG in 0.1.4 VERSION
+
 Experimental Use: This project is designed for educational purposes, small-scale experimentation, and demo projects.
 Scale Responsibly: For high-volume production traffic, please support the original AI researchers and infrastructure providers.
 🔗 Resources
-Documentation: npmai.netlify.app
-API Endpoint: npmai-api.onrender.com
+Documentation: https://npmai.netlify.app  , https://npmai.onrender.com
+API Endpoint: npmai-api.onrender.com/llm
 Developed with ❤️ to make AI accessible to everyone.
 Developer and Maintainer:- Sonu Kumar
+
 
