@@ -13,7 +13,7 @@
 - 🔗 **Zero Setup:** No local Ollama installation or complex API signups needed.
 - 🤖 **Multi-Model Support:** Execute prompts across 10+ open-source models simultaneously.
 - 🧠 **Built-in Memory:** (New in v0.1.3) Native memory support—no need for external Agentic frameworks.
-- 🕵️‍♂️🔍📑 **RAG Frame-Work no need to install Whisper or any model locally,no need to write code for the pdf,image,video,yt-video to text  just use npmai
+- 🕵️‍♂️🔍📑 **RAG Frame-Work:** **no need to install Whisper or any model locally,no need to write code for the pdf,image,video,yt-video to text  just use npmai**
 - ⚡ **Framework Ready:** Fully compatible with **LangChain**, **CrewAI**, and other orchestration tools.
 - 🛠️ **Universal API:** Access via Python, JavaScript, C++, Java, or C.
 
@@ -91,5 +91,6 @@ Documentation: https://npmai.netlify.app  , https://npmai.onrender.com
 API Endpoint: npmai-api.onrender.com/llm
 Developed with ❤️ to make AI accessible to everyone.
 Developer and Maintainer:- Sonu Kumar
+
 
 
