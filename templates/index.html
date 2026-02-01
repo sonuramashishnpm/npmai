@@ -270,6 +270,7 @@
     <div class="code-tabs" role="tablist" aria-label="Code examples">
       <button class="active" type="button">LLaMA-3.2</button>
       <button class="button">Memory</button>
+      <button class="button">Rag</button>
       <button type="button">Temperature uses</button>
       <button type="button">Validated_schema</button>
       <button type="button">CodeLLaMA-Instruct 7B</button>
@@ -312,13 +313,44 @@ print(result)
                  model="internlm:7b",
                 temperature=0.5
              )
-        prompts="Hello my name is sonu kumar how are you"
+        memory=Memory(
+                "unique_file_name"
+             )
+        memory_prompt=load_memory_variables()
+        prompts=f"{memory_prompt} Hello my name is sonu kumar how are you"
 
         result= llm.invoke(prompts)
+        save_context(prompts,result)
         print(result)
       </pre>
       <div>
 
+    <div class="code-block" style="display:none;">
+      <pre>
+        #Rag
+        from npmai import <b>Rag</b>
+        
+        rag=Rag(
+          files="file_name",
+          query="Any question you want to ask if you will ask here you must provide DB_PATH,Model_name",
+          DB_PATH="Any random name this name will save you file",
+          temperature=0.5 or any other,
+          model="qwen2.5-coder:7b"
+         )
+        response=rag.send()
+        print(response)
+
+        #If you want just conversion of file content into text then just do this:-
+        from npmai import Rag
+
+        rag=Rag(
+            files="file_name",
+           )
+        response=rag.send()
+        print(response)
+        #Whatever file are there just send.
+      </pre>
+ 
     <div class="code-block" style="display:none;">
       <pre>
 # Using temperature
