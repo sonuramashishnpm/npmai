@@ -5,7 +5,11 @@ import os
 
 app=Flask(__name__)
 
-
+@app.after_request
+def allow_iframe(response):
+    response.headers['Content-Security-Policy'] = "frame-ancestors 'self' https://your-site.com"
+    return response
+  
 @app.route("/")
 def render_index():
   return render_template("index.html")
