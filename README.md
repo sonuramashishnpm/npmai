@@ -19,6 +19,10 @@
 
 ---
 
+## Wrokflow:-
+
+<img src="https://i.ibb.co/DHxdx95T/npmai.png" alt="Example Screenshot" width="700" style="display: block; margin: 0 auto; margin-left:20px">
+
 ## 🖥️ Supported Models
 
 | Model Name | Description |
@@ -91,6 +95,7 @@ Documentation: https://npmai.netlify.app  , https://npmai.onrender.com
 API Endpoint: npmai-api.onrender.com/llm
 Developed with ❤️ to make AI accessible to everyone.
 Developer and Maintainer:- Sonu Kumar
+
 
 
 
