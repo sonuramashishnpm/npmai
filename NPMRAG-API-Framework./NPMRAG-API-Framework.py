@@ -1,10 +1,13 @@
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.embeddings import HuggingFaceBgeEmbeddings
 from langchain_community.vectorstores import FAISS
+from langchain_ollama.llms import OllamaLLM
 from fastapi import FastAPI, UploadFile, File, Form 
 from fastapi.responses import JSONResponse
 from moviepy.editor import VideoFileClip
 from pdf2image import convert_from_path
+from pydantic import BaseModel
 from fastapi import FastAPI
 from npmai import Ollama
 from PIL import Image
@@ -161,6 +164,7 @@ def text_processes(path,DB_PATH=None,query=None, temperature=None, model=None):
 def health():
     return {"ok":True}
     
+
 @app.post("/ingestion")
 async def ingest_file(
     query: str = Form(None),
@@ -217,7 +221,7 @@ async def ingest_file(
 
 
 #RETRIEVAL
-def retrieval(texts,DB_PATH,query,emb=HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2"), temperature=None, model=None):
+def retrieval(texts,DB_PATH,query,emb=HuggingFaceBgeEmbeddings(model_name="BAAI/bge-small-en-v1.5",model_kwargs={"device":"cpu"},encode_kwargs = {"normalize_embeddings": True},query_instruction="Represent this sentence for searching relevant passages: "), temperature=None, model=None):
   if DB_PATH is not None and query is not None:
       print("1")
       if os.path.exists(DB_PATH):
@@ -228,7 +232,7 @@ def retrieval(texts,DB_PATH,query,emb=HuggingFaceEmbeddings(model_name="all-Mini
           )
           print("2")
           retriever=vector_db.similarity_search(query,k=4)
-          return preref(retriever,query=query,temperature=temperature,model=model)
+          return preref(text=retriever,question=query,temperature=temperature,model=model)
       
       else:
           print("3")
@@ -242,13 +246,13 @@ def retrieval(texts,DB_PATH,query,emb=HuggingFaceEmbeddings(model_name="all-Mini
           vector_db.save_local(DB_PATH)
           
           retriever=vector_db.similarity_search(query,k=4)
-          return preref(retriever,query,temperature=temperature,model=model)
+          return preref(text=retriever,question=query,temperature=temperature,model=model)
   else:
       return "Sorry but you have to provide query and DB_PATH also in order to retrieve from Vectorised DataBase"
 
   
 #REFINE INITIALISATION
-def preref(text,question, temperature, model):
+def preref(text,question, temperature, model, **kwargs):
   ref=refine(
       text=text,
       question=question,
