@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "npmai"
-version = "0.1.2"
+version = "0.1.4"
 authors = [
   { name="Sonu Kumar (Viral Boy Bihar)", email="sonuramashishnpm@gmail.com" }
 ]
