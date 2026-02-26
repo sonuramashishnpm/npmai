@@ -1,10 +1,10 @@
 # 🚀 npmai 
-**By Sonu Kumar**
+**By Sonu Kumar (Viral Boy)**
 
-[![PyPI version](https://img.shields.io)](https://pypi.org/project/npmai/0.1.3)
+[![PyPI version](https://img.shields.io)](https://pypi.org/project/npmai/0.1.6)
 [![License: MIT](https://img.shields.io)](https://opensource.org)
 
-`npmai` is a lightweight Python package designed to bridge the gap between users and open-source LLMs. Connect with **Ollama** and 10+ other powerful models instantly—**no installation, no login, and no API keys required.**
+`npmai` is a lightweight Python package designed to bridge the gap between users and open-source LLMs. Connect with **Ollama** and 10+ other powerful models instantly—**no installation, no login, and no API keys required, and help in development of RAG Agents without installing anything locally or on cloud and it is free without sigin or signup or any type of limit.**
 
 ---
 
@@ -19,14 +19,6 @@
 
 ---
 
-## Workflow:-
-
-**npmai**
-<img src="https://i.ibb.co/NgChKgHP/npmai.png" alt="Example Screenshot" width="700" style="display: block; margin: 0 auto; margin-left:20px">
-
-**Rag**
-<img src="https://i.ibb.co/qYJd6Nhw/NPMAI-Rag-API-Pipeline.png" alt="Example Screenshot" width="700" style="display: block; margin: 0 auto; margin-left:20px">
-
 ## 🖥️ Supported Models
 
 | Model Name | Description |
@@ -39,6 +31,15 @@
 | *And many more...* | Falcon, Baichuan-2, InternLM, Vicuna |
 
 ---
+
+## Workflow:-
+
+**npmai**
+<img src="https://i.ibb.co/NgChKgHP/npmai.png" alt="Example Screenshot" width="700" style="display: block; margin: 0 auto; margin-left:20px">
+
+**Rag**
+<img src="https://i.ibb.co/qYJd6Nhw/NPMAI-Rag-API-Pipeline.png" alt="Example Screenshot" width="700" style="display: block; margin: 0 auto; margin-left:20px">
+
 
 ## ⚙️ Installation
 
@@ -85,24 +86,15 @@ nlohmann::json payload = {
     {"temperature", 0.4}
 };
 auto res = cli.Post("/llm", payload.dump(), "application/json");
-
-🆕 Latest Update: Version 0.1.3
-We have introduced Native Memory! You no longer need to manually manage chat history or rely on complex Agentic frameworks. npmai now handles context persistence internally, allowing for seamless continuous conversations.
+```
+🆕 Latest Update: Version 0.1.6
+In this update we added the try and except for api hitting and added huggingface api endpoints as fallback.
+version 0.1.5 --->> Just fixed some bugs and added link as a parameter in Rag class
+version 0.1.4 --->> Now you do not need to write code for RAG tools like pdf,image,video,audio,yt-video to text and no need to load whisper and other requirements locally no local process everything on cloud in free without any signup or singin or key hurdles.
 ⚠️ Important Notes
-
-#WE ARE UPDATING npmai with RAG in 0.1.4 VERSION
-
-Experimental Use: This project is designed for educational purposes, small-scale experimentation, and demo projects.
-Scale Responsibly: For high-volume production traffic, please support the original AI researchers and infrastructure providers.
+Please star our project on Github please.
 🔗 Resources
-Documentation: https://npmai.netlify.app  , https://npmai.onrender.com
+Documentation: npmai.netlify.com
 API Endpoint: npmai-api.onrender.com/llm
 Developed with ❤️ to make AI accessible to everyone.
 Developer and Maintainer:- Sonu Kumar
-
-
-
-
-
-
-
