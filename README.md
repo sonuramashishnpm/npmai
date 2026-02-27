@@ -4,6 +4,8 @@
 [![PyPI version](https://img.shields.io)](https://pypi.org/project/npmai/0.1.6)
 [![License: MIT](https://img.shields.io)](https://opensource.org)
 
+https://deepwiki.com/badge-maker?url=https%3A%2F%2Fdeepwiki.com%2Fsonuramashishnpm%2Fnpmai
+
 `npmai` is a lightweight Python package designed to bridge the gap between users and open-source LLMs. Connect with **Ollama** and 10+ other powerful models instantly—**no installation, no login, and no API keys required, and help in development of RAG Agents without installing anything locally or on cloud and it is free without sigin or signup or any type of limit.**
 
 ---
