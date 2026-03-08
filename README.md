@@ -96,8 +96,11 @@ In this update :-
 3. Added docstrings descriptions in every class Ollama,Memory,Rag.
 
 version 0.1.6 --->> Added try and except for api hitting and added huggingface api endpoints as fallback.
-version 0.1.5 --->> Just fixed some bugs and added link as a parameter in Rag class
-version 0.1.4 --->> Now you do not need to write code for RAG tools like pdf,image,video,audio,yt-video to text and no need to load whisper and other requirements locally no local process everything on cloud in free without any signup or singin or key hurdles.
+
+version 0.1.5 --->> Just fixed some bugs and added link as a parameter in Rag class.
+
+version 0.1.4 --->> Now you do not need to write code for RAG tools like pdf,image,video,audio,yt-video to text and no need to load whisper and other requirements locally 
+no local process everything on cloud in free without any signup or singin or key hurdles.
 
 ⚠️ Important Notes
 Please star our project on Github please.
@@ -106,6 +109,7 @@ Documentation: npmai.netlify.com
 API Endpoint: npmai-api.onrender.com/llm
 Developed with ❤️ to make AI accessible to everyone.
 Developer and Maintainer:- Sonu Kumar
+
 
 
 
