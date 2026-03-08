@@ -6,7 +6,9 @@
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/sonuramashishnpm/npmai)
 
-`npmai` is a lightweight Python package designed to bridge the gap between users and open-source LLMs. Connect with **Ollama** and 10+ other powerful models instantly—**no installation, no login, and no API keys required, and help in development of RAG Agents without installing anything locally or on cloud and it is free without sigin or signup or any type of limit.**
+`npmai` is a lightweight Python package designed to bridge the gap between users and open-source LLMs. 
+
+Connect with **Ollama** and 10+ other powerful models instantly—**no installation, no login, and no API keys required, and help in development of RAG Agents without installing anything locally or on cloud and it is free without sigin or signup or any type of limit.**
 
 ---
 
@@ -36,10 +38,10 @@
 
 ## Workflow:-
 
-**npmai**
+### npmai
 <img src="https://i.ibb.co/NgChKgHP/npmai.png" alt="Example Screenshot" width="700" style="display: block; margin: 0 auto; margin-left:20px">
 
-**Rag**
+### Rag
 <img src="https://i.ibb.co/qYJd6Nhw/NPMAI-Rag-API-Pipeline.png" alt="Example Screenshot" width="700" style="display: block; margin: 0 auto; margin-left:20px">
 
 
@@ -90,6 +92,7 @@ nlohmann::json payload = {
 auto res = cli.Post("/llm", payload.dump(), "application/json");
 ```
 🆕 Latest Update: Version 0.1.7
+
 In this update :-
 1. We updated parameters of Rag class where now you can send multiple files of different file-type at once.
 2. We also added a clear_memory method in Memory class to remove memory files that you created while using Memory class.
@@ -102,14 +105,16 @@ version 0.1.5 --->> Just fixed some bugs and added link as a parameter in Rag cl
 version 0.1.4 --->> Now you do not need to write code for RAG tools like pdf,image,video,audio,yt-video to text and no need to load whisper and other requirements locally 
 no local process everything on cloud in free without any signup or singin or key hurdles.
 
-⚠️ Important Notes
+⚠️ Important Notes:-
+
 Please star our project on Github please.
+
 🔗 Resources
+
 Documentation: npmai.netlify.com
+
 API Endpoint: npmai-api.onrender.com/llm
+
 Developed with ❤️ to make AI accessible to everyone.
+
 Developer and Maintainer:- Sonu Kumar
-
-
-
-
