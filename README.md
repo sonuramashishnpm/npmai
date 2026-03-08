@@ -1,7 +1,7 @@
 # 🚀 npmai 
 **By Sonu Kumar (Viral Boy)**
 
-[![PyPI version](https://img.shields.io)](https://pypi.org/project/npmai/0.1.6)
+[![PyPI version](https://img.shields.io)](https://pypi.org/project/npmai/0.1.7)
 [![License: MIT](https://img.shields.io)](https://opensource.org)
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/sonuramashishnpm/npmai)
@@ -89,10 +89,16 @@ nlohmann::json payload = {
 };
 auto res = cli.Post("/llm", payload.dump(), "application/json");
 ```
-🆕 Latest Update: Version 0.1.6
-In this update we added the try and except for api hitting and added huggingface api endpoints as fallback.
+🆕 Latest Update: Version 0.1.7
+In this update :-
+1. We updated parameters of Rag class where now you can send multiple files of different file-type at once.
+2. We also added a clear_memory method in Memory class to remove memory files that you created while using Memory class.
+3. Added docstrings descriptions in every class Ollama,Memory,Rag.
+
+version 0.1.6 --->> Added try and except for api hitting and added huggingface api endpoints as fallback.
 version 0.1.5 --->> Just fixed some bugs and added link as a parameter in Rag class
 version 0.1.4 --->> Now you do not need to write code for RAG tools like pdf,image,video,audio,yt-video to text and no need to load whisper and other requirements locally no local process everything on cloud in free without any signup or singin or key hurdles.
+
 ⚠️ Important Notes
 Please star our project on Github please.
 🔗 Resources
@@ -100,5 +106,6 @@ Documentation: npmai.netlify.com
 API Endpoint: npmai-api.onrender.com/llm
 Developed with ❤️ to make AI accessible to everyone.
 Developer and Maintainer:- Sonu Kumar
+
 
 
