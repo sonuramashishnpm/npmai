@@ -8,7 +8,10 @@ version = "0.1.7"
 authors = [
   { name="Sonu Kumar (Viral Boy Bihar)", email="sonuramashishnpm@gmail.com" }
 ]
-description = "A framework developed for supporting in development of AI Agents without installing a lot of things and in free on cloud without signin or signup or limit hurdles by Sonu Kumar (Viral Boy Bihar)."
+description = "npmai is a lightweight Python package designed to bridge the gap between users and open-source LLMs. 
+
+Connect with Ollama and 10+ other powerful models instantly— no installation, no login, and no API keys required, and help in development of RAG Agents without installing anything locally or on cloud and it is free without sigin or signup or any type of limit.
+"
 readme = "README.md"
 requires-python = ">=3.10,<3.14"
 license = { text = "MIT" }
@@ -23,4 +26,5 @@ dependencies = [
 [project.urls]
 Homepage = "https://npmai.netlify.com"
 Source = "https://github.com/sonuramashishnpm/npmai"
+
 
