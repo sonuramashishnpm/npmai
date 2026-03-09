@@ -52,19 +52,14 @@ def pdf_has_text(path):
     return False
 
 @app.post("/pdfetext")
-def extractable_text(path,DB_PATH=None,query=None, temperature=None, model=None):
+def extractable_text(path):
     print("Extracting")
     doc=fitz.open(path)
     full=[]
     for page in doc:
         full.append(page.get_text())
     text="\n".join(full)
-    if query is not None and DB_PATH is not None:
-        print("query")
-        return retrieval(DB_PATH=DB_PATH,query=query,texts=text,temperature=temperature,model=model)
-    else:
-        print("else")
-        return text
+    return text
 
 def preprocess_for_ocr(path):
     img=cv2.imread(path,cv2.IMREAD_COLOR)
@@ -77,7 +72,7 @@ def preprocess_for_ocr(path):
     return th
 
 @app.post("/pdfstext")
-def pdf_scanned_to_text(pdf_path,dpi=300, tesseract_lang='eng',DB_PATH=None,query=None, temperature=None, model=None):
+def pdf_scanned_to_text(pdf_path,dpi=300, tesseract_lang='eng'):
     print("scanning")
     pages = convert_from_path(pdf_path, dpi=dpi)
     print("pages")
@@ -87,26 +82,18 @@ def pdf_scanned_to_text(pdf_path,dpi=300, tesseract_lang='eng',DB_PATH=None,quer
         full.append(pytesseract.image_to_string(img, lang=tesseract_lang, config='--psm 6'))
     text="\n\n".join(full)
     print(text)
-    if query is not None and DB_PATH is not None:
-        print("query")
-        return retrieval(DB_PATH=DB_PATH,query=query,texts=text,temperature=temperature,model=model)
-    else:
-        print("elsetext")
-        return text
+    return text
 
 @app.post("/ocr")
-def ocr(path,lang="eng",DB_PATH=None,query=None, temperature=None, model=None):
+def ocr(path,lang="eng"):
     proc = preprocess_for_ocr(path)
     pil = Image.fromarray(proc)
     full = pytesseract.image_to_string(pil, lang=lang, config='--psm 6')
-    if query is not None and DB_PATH is not None:
-        return retrieval(DB_PATH=DB_PATH,query=query,texts=full,temperature=temperature,model=model)
-    else:
-        return full
+    return full
 
 """
 @app.post("/ytvideo)
-def get_transcript(link,output_path,DB_PATH=None,query=None, temperature=None, model=None):
+def get_transcript(link,output_path):
     url = link
     ydl_opts = {
         'outtmpl': output_path,
@@ -129,13 +116,11 @@ def get_transcript(link,output_path,DB_PATH=None,query=None, temperature=None, m
     model= get_whisper_model()
     result=model.transcribe("temp.wav")
     text=result["text"]
-    if query is not None and DB_PATH is not None:
-        return retrieval(DB_PATH=DB_PATH,query=query,texts=text,temperature=temperature,model=model)
-    else:
-        return text"""
+    return text
+    """
 
 @app.post("/video")
-def local_video_processing(video_path,DB_PATH=None,query=None, temperature=None, model=None):
+def local_video_processing(video_path):
     clip=VideoFileClip(video_path)
 
     audio=clip.audio
@@ -144,19 +129,13 @@ def local_video_processing(video_path,DB_PATH=None,query=None, temperature=None,
     model= get_whisper_model()
     result=model.transcribe("temp.wav")
     text=result["text"]
-    if query is not None and DB_PATH is not None:
-        return retrieval(DB_PATH=DB_PATH,query=query,texts=text,temperature=temperature,model=model)
-    else:
-        return text
+    return text
 
 @app.post("/text")
-def text_processes(path,DB_PATH=None,query=None, temperature=None, model=None):
+def text_processes(path):
     with open(path,"r") as f:
         text=f.read()
-        if query is not None and DB_PATH is not None:
-            return retrieval(DB_PATH=DB_PATH,query=query,texts=text,temperature=temperature,model=model)
-        else:
-            return text
+        return text
     
 
 #ROUTING POINT
@@ -169,7 +148,7 @@ def health():
 async def ingest_file(
     query: str = Form(None),
     DB_PATH: str = Form(None),
-    file: UploadFile = File(None),
+    file: list[UploadFile] = File(None),
     link: str = Form(None),
     output_path: str = Form(None),
     temperature:float = Form(None),
@@ -177,47 +156,66 @@ async def ingest_file(
 ):
     os.makedirs("uploads", exist_ok=True)
     result = None
+    extracted_texts=[]
 
     # ---------- FILE MODE ----------
     if file:
-        contents = await file.read()
-        file_path = f"uploads/{file.filename}"
-        print("file_path")
-
-        with open(file_path, "wb") as f:
-            f.write(contents)
-
-        ext = file.filename.lower().split(".")[-1]
-
-        if ext == "pdf":
-            print("pdf")
-            if pdf_has_text(file_path):
-                result = extractable_text(path=file_path, DB_PATH=DB_PATH, query=query, temperature=temperature, model=model)
-                print("yes")
+        length=len(file)
+        for i in range(length):
+            contents = await file[i].read()
+            file_path = f"uploads/{file[i].filename}"
+            print("file_path")
+            
+            with open(file_path, "wb") as f:
+                f.write(contents)
+                
+            ext = file[i].filename.lower().split(".")[-1]
+            
+            if ext == "pdf":
+                print("pdf")
+                if pdf_has_text(file_path):
+                    result = extractable_text(path=file_path)
+                    extracted_texts.append(f"PDF: {result}")
+                    print("yes")
+                else:
+                    result = pdf_scanned_to_text(pdf_path=file_path)
+                    extracted_texts.append(f"PDF: {result}")
+                    print('yes2')
+                
+            elif ext in ("png", "jpg", "jpeg"):
+                result = ocr(path=file_path)
+                extracted_texts.append(f"Image: {result}")
+            
+            elif ext == "txt":
+                result = text_processes(path=file_path)
+                extracted_texts.append(f"Text: {result}")
+            
+            elif ext == "mp4":
+                result = local_video_processing(video_path=file_path)
+                extracted_texts.append(f"Video: {result}")
             else:
-                result = pdf_scanned_to_text(pdf_path=file_path, DB_PATH=DB_PATH, query=query, temperature=temperature, model=model)
-                print('yes2')
-
-        elif ext in ("png", "jpg", "jpeg"):
-            result = ocr(path=file_path, DB_PATH=DB_PATH, query=query, temperature=temperature, model=model)
-
-        elif ext == "txt":
-            result = text_processes(path=file_path, DB_PATH=DB_PATH, query=query, temperature=temperature, model=model)
-
-        elif ext == "mp4":
-            result = local_video_processing(video_path=file_path, DB_PATH=DB_PATH, query=query, temperature=temperature, model=model)
-        
-        else:
-            return JSONResponse({"response": "Unsupported file type"})
+                return JSONResponse({"response": "Unsupported file type"})
 
     else:
         return JSONResponse({"response": "No input provided"})
 
-    return JSONResponse({"response": result})
+    results= extractable_router(extracted_texts=extracted_texts, DB_PATH=DB_PATH, query=query, temperature=temperature, model=model)
+    
+    return JSONResponse({"response": results})
         
     """# ---------- LINK MODE ----------
     elif link:
         result = get_transcript(link, DB_PATH, query, output_path)"""
+
+
+
+
+def extractable_router(extracted_texts, DB_PATH=None, query=None, temperature=None, model=None):
+    if query is not None and DB_PATH is not None:
+        stringed_extracted_texts= "\n\n----------\n\n".join(extracted_texts)
+        return retrieval(DB_PATH=DB_PATH,query=query,texts=stringed_extracted_texts,temperature=temperature,model=model)
+    else:
+        return "\n\n----------\n\n".join(extracted_texts)
 
 
 #RETRIEVAL
