@@ -42,7 +42,9 @@ Connect with **Ollama** and 10+ other powerful models instantly—**no installat
 ### Rag
 <img src="https://i.ibb.co/qYJd6Nhw/NPMAI-Rag-API-Pipeline.png" alt="Example Screenshot" width="700" style="display: block; margin: 0 auto; margin-left:20px">
 
+## Tutorial:-
 
+<video src="https://npmai.netlify.app/npmaidocs.mp4" ></video>
 ## ⚙️ Installation
 
 Install via pip in seconds:
@@ -116,5 +118,6 @@ API Endpoint: npmai-api.onrender.com/llm
 Developed with ❤️ to make AI accessible to everyone.
 
 Developer and Maintainer:- Sonu Kumar
+
 
 
