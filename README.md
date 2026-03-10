@@ -2,8 +2,6 @@
 **By Sonu Kumar (Viral Boy)**
 
 <a href="https://pypi.org/project/npmai"><img src="https://img.shields.io/pypi/v/npmai?logo=pypi&style=for-the-badge" /></a>
-[![License: MIT](https://img.shields.io)](https://opensource.org)
-
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/sonuramashishnpm/npmai)
 
 `npmai` is a lightweight Python package designed to bridge the gap between users and open-source LLMs. 
@@ -118,4 +116,5 @@ API Endpoint: npmai-api.onrender.com/llm
 Developed with ❤️ to make AI accessible to everyone.
 
 Developer and Maintainer:- Sonu Kumar
+
 
