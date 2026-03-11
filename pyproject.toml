@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "npmai"
-version = "0.1.7"
+version = "0.1.8"
 authors = [
   { name="Sonu Kumar (Viral Boy Bihar)", email="sonuramashishnpm@gmail.com" }
 ]
@@ -23,6 +23,7 @@ dependencies = [
 [project.urls]
 Homepage = "https://npmai.netlify.com"
 Source = "https://github.com/sonuramashishnpm/npmai"
+
 
 
 
