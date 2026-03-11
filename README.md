@@ -16,6 +16,7 @@ Connect with **Ollama** and 10+ other powerful models instantly—**no installat
 - 🤖 **Multi-Model Support:** Execute prompts across 10+ open-source models simultaneously.
 - 🧠 **Built-in Memory:** (New in v0.1.3) Native memory support—no need for external Agentic frameworks.
 - 🕵️‍♂️🔍📑 **RAG Frame-Work:** **no need to install Whisper or any model locally,no need to write code for the pdf,image,video,yt-video to text  just use npmai**
+- 🔍📑 **Vectorised Database** **Now you can store your any all type of files in vectorised form through npmai for free of cost unlimited time**
 - ⚡ **Framework Ready:** Fully compatible with **LangChain**, **CrewAI**, and other orchestration tools.
 - 🛠️ **Universal API:** Access via Python, JavaScript, C++, Java, or C.
 
@@ -40,8 +41,7 @@ Connect with **Ollama** and 10+ other powerful models instantly—**no installat
 <img src="https://i.ibb.co/NgChKgHP/npmai.png" alt="Example Screenshot" width="700" style="display: block; margin: 0 auto; margin-left:20px">
 
 ### Rag
-<img src="https://i.ibb.co/qYJd6Nhw/NPMAI-Rag-API-Pipeline.png" alt="Example Screenshot" width="700" style="display: block; margin: 0 auto; margin-left:20px">
-<img src="https://i.ibb.co/W43CqndR/NPMAI-RAG-API-Pipleline.png" alt="Example Screenshot" width="700" style="display: block; margin: 0 auto; margin-left:20px">
+<img src="https://i.ibb.co/W43CqndR/NPMAI-RAG-API-Pipleline.png" alt="Example Screenshot" width="1100" style="display: block; margin: 0 auto; margin-left:20px">
 
 ## ⚙️ Installation
 
@@ -89,12 +89,15 @@ nlohmann::json payload = {
 };
 auto res = cli.Post("/llm", payload.dump(), "application/json");
 ```
-🆕 Latest Update: Version 0.1.7
+🆕 Latest Update: Version 0.1.8
 
 In this update :-
-1. We updated parameters of Rag class where now you can send multiple files of different file-type at once.
-2. We also added a clear_memory method in Memory class to remove memory files that you created while using Memory class.
-3. Added docstrings descriptions in every class Ollama,Memory,Rag.
+1. Integrated Supabase for long term storage of vecorised Documents, this integration is done in Huggingface Server where npmai send request for Rag processes.
+2. Added a method in Rag class of npmai sdk named "vector_db_use".
+3. Updated parameters of Rag class to make compatible with supabase integration on Huggingface Server.
+4. Updated Docstrings for Rag class.
+
+version 0.1.7 --->> Updated parameters of Rag class for sending multiple files of all type at once and also added a clear_memory method in Memory class to remove memory files and added docstrings description in every class Ollama,Memory,Rag.
 
 version 0.1.6 --->> Added try and except for api hitting and added huggingface api endpoints as fallback.
 
@@ -116,6 +119,7 @@ API Endpoint: npmai-api.onrender.com/llm
 Developed with ❤️ to make AI accessible to everyone.
 
 Developer and Maintainer:- Sonu Kumar
+
 
 
 
