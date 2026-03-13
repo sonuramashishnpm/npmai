@@ -7,6 +7,7 @@ from fastapi import FastAPI, UploadFile, File, Form
 from fastapi.responses import JSONResponse
 from moviepy.editor import VideoFileClip
 from pdf2image import convert_from_path
+from supabase import create_client
 from pydantic import BaseModel
 from fastapi import FastAPI
 from npmai import Ollama
@@ -22,6 +23,12 @@ import cv2
 import os
 
 app=FastAPI()
+
+
+SUPABASE_URL= os.environ["SUPABASE_URL"]
+SUPABASE_KEY= os.environ["SUPABASE_KEY"]
+
+supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 os.environ["CUDA_VISIBLE_DEVICES"] = ""
 
@@ -151,8 +158,11 @@ async def ingest_file(
     file: list[UploadFile] = File(None),
     link: str = Form(None),
     output_path: str = Form(None),
-    temperature:float = Form(None),
+    temperature: float = Form(None),
     model: str = Form(None),
+    public: bool = Form(None),
+    Upload: bool = Form(None),
+    secret_key: str = Form(None)
 ):
     os.makedirs("uploads", exist_ok=True)
     result = None
@@ -199,7 +209,7 @@ async def ingest_file(
     else:
         return JSONResponse({"response": "No input provided"})
 
-    results= extractable_router(extracted_texts=extracted_texts, DB_PATH=DB_PATH, query=query, temperature=temperature, model=model)
+    results= extractable_router(extracted_texts=extracted_texts, DB_PATH=DB_PATH, query=query, temperature=temperature, model=model, secret_key=secret_key, Upload=Upload, public=public)
     
     return JSONResponse({"response": results})
         
@@ -210,18 +220,95 @@ async def ingest_file(
 
 
 
-def extractable_router(extracted_texts, DB_PATH=None, query=None, temperature=None, model=None):
+def extractable_router(extracted_texts, DB_PATH=None, query=None, temperature=None, model=None, secret_key=None, Upload=None, public=None):
     if query is not None and DB_PATH is not None:
         stringed_extracted_texts= "\n\n----------\n\n".join(extracted_texts)
         return retrieval(DB_PATH=DB_PATH,query=query,texts=stringed_extracted_texts,temperature=temperature,model=model)
+    elif Upload:
+        stringed_extracted_texts2= "\n\n----------\n\n".join(extracted_texts)
+        return retrieval(DB_PATH=DB_PATH,query=query,texts=stringed_extracted_texts2,temperature=temperature,model=model,secret_key=secret_key, Upload=Upload, public=public)
     else:
         return "\n\n----------\n\n".join(extracted_texts)
 
 
+@app.post("/get_direct_retrieval")
+async def get_retrieval(
+    DB_PATH: str = Form(...),
+    query: str = Form(...),
+    secret_key: str = Form(None),
+    public: bool = Form(None),
+):
+    if DB_PATH is None and query is None:
+        return JSONResponse({"response":"Sorry but please pass DB_PATH name and Query name in string data type."})
+        
+    if os.path.exists(DB_PATH):
+        normal_retriever= retrieval(temperature=0.5,model="llama3.2",DB_PATH=DB_PATH,query=query)
+        return JSONResponse({"response":normal_retriever})
+        
+    else:
+        if public:
+            download_index_faiss = (
+                supabase.storage
+                .from_("NPMRagWebVectorDB")
+                .download(f"public/{DB_PATH}/index.faiss")
+            )
+            
+            download_index_pkl = (
+                supabase.storage
+                .from_("NPMRagWebVectorDB")
+                .download(f"public/{DB_PATH}/index.pkl")
+            )
+
+            os.makedirs(DB_PATH, exist_ok=True)
+
+            full_path_faiss = os.path.join(DB_PATH, "index.faiss")
+            full_path_pkl = os.path.join(DB_PATH, "index.pkl")
+
+            with open(full_path_faiss,"wb+") as faiss_save:
+                faiss_save.write(download_index_faiss)
+
+            with open(full_path_pkl,"wb+") as pkl_save:
+                pkl_save.write(download_index_pkl)
+
+            result= retrieval(DB_PATH=DB_PATH,query=query,temperature=0.5,model="llama3.2")
+            return JSONResponse({"response":result})
+
+        elif secret_key:
+            download_index_faiss = (
+                supabase.storage
+                .from_("NPMRagWebVectorDB")
+                .download(f"{secret_key}/{DB_PATH}/index.faiss")
+            )
+            
+            download_index_pkl = (
+                supabase.storage
+                .from_("NPMRagWebVectorDB")
+                .download(f"{secret_key}/{DB_PATH}/index.pkl")
+            )
+
+            os.makedirs(DB_PATH, exist_ok=True)
+
+            full_path_faiss = os.path.join(DB_PATH, "index.faiss")
+            full_path_pkl = os.path.join(DB_PATH, "index.pkl")
+
+            with open(full_path_faiss,"wb+") as faiss_save:
+                faiss_save.write(download_index_faiss)
+
+            with open(full_path_pkl,"wb+") as pkl_save:
+                pkl_save.write(download_index_pkl)
+
+            result_sec= retrieval(DB_PATH=DB_PATH,query=query,temperature=0.5,model="llama3.2")
+            return JSONResponse({"response":result_sec})
+
+        else:
+            return JSONResponse({"response":"Sorry please provide secret_key that you entered during uploading Documents for processing or do public parameter True."})
+    
+    
+    
+
 #RETRIEVAL
-def retrieval(texts,DB_PATH,query,emb=HuggingFaceBgeEmbeddings(model_name="BAAI/bge-small-en-v1.5",model_kwargs={"device":"cpu"},encode_kwargs = {"normalize_embeddings": True},query_instruction="Represent this sentence for searching relevant passages: "), temperature=None, model=None):
-  if DB_PATH is not None and query is not None:
-      print("1")
+def retrieval(DB_PATH,emb=HuggingFaceBgeEmbeddings(model_name="BAAI/bge-small-en-v1.5",model_kwargs={"device":"cpu"},encode_kwargs = {"normalize_embeddings": True},query_instruction="Represent this sentence for searching relevant passages: "), texts=None, query=None, temperature=None, model=None, secret_key=None, Upload=None, public=None):
+    if DB_PATH:
       if os.path.exists(DB_PATH):
           vector_db=FAISS.load_local(
               DB_PATH,
@@ -233,7 +320,6 @@ def retrieval(texts,DB_PATH,query,emb=HuggingFaceBgeEmbeddings(model_name="BAAI/
           return preref(text=retriever,question=query,temperature=temperature,model=model)
       
       else:
-          print("3")
           text_splitter=RecursiveCharacterTextSplitter(
               chunk_size=1000,
               chunk_overlap=200
@@ -242,10 +328,89 @@ def retrieval(texts,DB_PATH,query,emb=HuggingFaceBgeEmbeddings(model_name="BAAI/
           
           vector_db=FAISS.from_texts(chunks,emb)
           vector_db.save_local(DB_PATH)
-          
-          retriever=vector_db.similarity_search(query,k=4)
-          return preref(text=retriever,question=query,temperature=temperature,model=model)
-  else:
+
+          if Upload:
+              index_file_faiss_var= open(f"{DB_PATH}/index.faiss","rb")
+              index_file_pkl_var= open(f"{DB_PATH}/index.pkl","rb")
+              
+              if secret_key:
+                  try:
+                      index1faiss = (
+                          supabase.storage
+                          .from_("NPMRagWebVectorDB")
+                          .upload(
+                              file=index_file_faiss_var,
+                              path=f"{secret_key}/{DB_PATH}/index.faiss",
+                              file_options={"upsert": "false"}
+                          )
+                      )
+                      print(index1faiss)
+                  except:
+                      return "Sorry Some problems in uploading your Documents in Database, reupload the documents"
+                  
+                  try:
+                      index2pkl= (
+                          supabase.storage
+                          .from_("NPMRagWebVectorDB")
+                          .upload(
+                              file=index_file_pkl_var,
+                              path=f"{secret_key}/{DB_PATH}/index.pkl",
+                              file_options={"upsert": "false"}
+                          )
+                      )
+                      print(index2pkl)
+                  except:
+                      file_first_faiss_removal = (
+                          supabase.storage
+                          .from_("NPMRagWebVectorDB")
+                          .remove([f"{secret_key}/{DB_PATH}/index.faiss"])
+                      )
+                      print(file_first_faiss_removal)
+                      
+                      return "Sory some problem in uploading your Documents in Database, reupload the documents"
+                      
+              elif public:
+                  try:
+                      index_public_faiss=(
+                          supabase.storage
+                          .from_("NPMRagWebVectorDB")
+                          .upload(
+                              file=index_file_faiss_var,
+                              path=f"public/{DB_PATH}/index.faiss",
+                              file_options={"upsert": "false"}
+                          )
+                      )
+                      print(index_public_faiss)
+                  except:
+                      return "Sory some problem in uploading your Documents in Database, reupload the documents"
+
+                  try:
+                      index_public_pkl=(
+                          supabase.storage
+                          .from_("NPMRagWebVectorDB")
+                          .upload(
+                              file=index_file_pkl_var,
+                              path=f"public/{DB_PATH}/index.pkl",
+                              file_options={"upsert": "false"}
+                          )
+                      )
+                      print(index_public_pkl)
+                  except:
+                      file_first_faiss_removal = (
+                          supabase.storage
+                          .from_("NPMRagWebVectorDB")
+                          .remove([f"public/{DB_PATH}/index.faiss"])
+                      )
+                      print(file_first_faiss_removal)
+                      return "Sory some problem in uploading your Documents in Database, reupload the documents"
+                      
+              else:
+                  return "Sorry please pass at least Secret_key or Public param in order to save your document in Database for persistent memory."
+                  
+          else:
+              retriever=vector_db.similarity_search(query,k=4)
+              return preref(text=retriever,question=query,temperature=temperature,model=model)
+    else:
       return "Sorry but you have to provide query and DB_PATH also in order to retrieve from Vectorised DataBase"
 
   
@@ -289,7 +454,7 @@ class refine:
           temperature=temperature
       )
       response=llm.invoke(prompt)
-      time.sleep(3)
+        
       if answers:
         answers.remove(answers[0])
         answers.append(response)
