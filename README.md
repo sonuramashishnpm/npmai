@@ -44,6 +44,45 @@ Connect with **Ollama** and 10+ other powerful models instantly—**no installat
 ### Rag
 <img src="https://i.ibb.co/W43CqndR/NPMAI-RAG-API-Pipleline.png" alt="Example Screenshot" width="1100" style="display: block; margin: 0 auto; margin-left:20px">
 
+
+## npmai Ecosystem:-
+
+Here <a href="https://npmai.netlify.com"><img src="https://img.shields.io/badge/npmai-blue" /></a> is the main core component of **NPMAI ECOSYSTEM** in Ecosystem following products are:-
+
+**1.NPM-Rag-A.I**:-NPM Rag A.I is a beautiful, easy-to-use web application that lets you instantly create and talk to your own private or public knowledge bases using RAG (Retrieval-Augmented Generation).
+
+Visit:- <a href="https://npmragai.onrender.com"><img src="https://img.shields.io/badge/NPM%20Rag%20AI-blue" /></a> 
+
+**2.NPM-Journalist**:-You can raise voice to Government without getting traced,safe & secure journalism.
+
+Visit:- <a href="https://npmjournalist.onrender.com"><img src="https://img.shields.io/badge/NPM%20Journalist-blue" /></a> 
+
+**3.NPM-AutoCode-A.I**:- Full Autonomous agent where A.I will write code to auotmate PC and execute debug and before execution of any code there will be a safety check,full secure.
+
+Visit:- <a href="https://npmcodeai.netlify.com"><img src="https://img.shields.io/badge/NPM%20AutoCode%20AI-blue" /></a> 
+
+**4.NPM-Youtube-Automation**:-Just give us Video and Thumbnail and go to sleep your video will automatically uploaded to Youtube with full meta-data including captions.(Future update:- Your video or any post will be uploaded to all social media platforms from Facebook to X to insta to all).
+
+Visit:- <a href="https://npmyt.onrender.com"><img src="https://img.shields.io/badge/NPM%20Youtube%20Automation-blue" /></a> 
+
+**5.NPM-Debater-A.I**:-You can enjoy debate of 4 AI models just enter topic and enjoy infinite debate arena.
+
+Visit:- <a href="https://npmdebateai.onrender.com"><img src="https://img.shields.io/badge/NPM%20Debater%20AI-blue" /></a> 
+
+**6.NPM-Legal-A.I**:-Legal Chatbot with specific models,processings for free supports all documents of users (Currently it only support Indian Laws).
+
+Visit:- <a href="https://npmlegalai.onrender.com"><img src="https://img.shields.io/badge/NPM%20Legal%20AI-blue" /></a> 
+
+**7.NPM-Business-Analysis-A.I**:-Business Analysis AI where you will explain your business and it will guide you in making plans (Future Updates:- ***NPM-Youtube-Automation*** and ***npmai-RAG*** will be integrated.)
+
+Visit:- <a href="https://npmbusinessai.netlify.app/"><img src="https://img.shields.io/badge/NPM%20Business%20Analysis%20AI-blue" /></a> 
+
+**8.NPM-Data-A.I**:-It will analyse your Bank Account transaction history and it will give advice related to your financial future and conditions.
+
+Visit:- <a href="https://npmdata.streamlit.app"><img src="https://img.shields.io/badge/NPM%20Data%20AI-blue" /></a> 
+
+***Note:- All projects are free and deployed and production ready.***
+
 ## ⚙️ Installation
 
 Install via pip in seconds:
@@ -120,9 +159,3 @@ API Endpoint: npmai-api.onrender.com/llm
 Developed with ❤️ to make AI accessible to everyone.
 
 Developer and Maintainer:- Sonu Kumar
-
-
-
-
-
-
