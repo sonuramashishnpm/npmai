@@ -1,3 +1,45 @@
+""" IMPORTANT UPDATE"""
+
+""" 🚀 NPMAI Update: Advanced RAG Architecture
+We have officially moved beyond basic RAG to a more intelligent and cost-efficient pipeline. 
+These updates focus on maximizing context relevance while minimizing LLM latency. 
+
+1. Dynamic K-Context Retrieval (70% Coverage)
+The Problem: Fixed k values (e.g., k=4) are inefficient. They often provide too little context for large documents or too much "noise" for very short snippets.
+The Solution: I have implemented a Proportional Scaling logic that calculates the optimal number of chunks to retrieve based on the actual size of your vectorized database.
+Logic: dynamic_k = max(1, int(total_chunks * 0.70))
+How it works:
+Short Text: If your document has only 1 chunk, the system retrieves only that 1 relevant chunk.
+Large PDF: If your PDF has 100 chunks, the system automatically scales up to retrieve 70 relevant chunks (
+
+), ensuring the AI sees the "full picture" without missing critical details.
+Benefit: Provides Smart Scaling that adapts to any document size automatically.
+
+2. Sliding Window Batch-Refinement (3-Chunk Window)
+The Problem: Standard "Refine" strategies process one chunk at a time, making 
+ separate API calls. For a 20-chunk document, this is incredibly slow and expensive.
+The Solution: I have engineered a Batch-Refine system that processes chunks in a sliding window of 3 instead of 1.
+Logic: for i in range(0, total_chunks, 3):
+How it works:
+Instead of sending 1 chunk per loop, the system sends a group of 3 related chunks (
+
+
+ characters) to the LLM in a single pass.
+It uses a "Refine" prompt to merge the new 3-chunk information with the existing answer.
+Benefit: 
+3x Faster Execution: Reduces total LLM API calls by 66%.
+Improved Coherence: The AI can see relationships across a broader context ( chars vs chars), leading to much smarter and more accurate answers.
+
+3. Infrastructure: Persistent Supabase Integration (v0.1.8)
+We have successfully integrated Supabase Object Storage for long-term, persistent storage of vectorized files.
+Vector Persistence: Your documents are no longer temporary; they are stored in a vectorized form on a secure cloud database for unlimited time.
+Universal Access: This allows your NPM-Rag-AI and NPM-AutoCode-AI to access the same knowledge base from anywhere.
+Summary of Impact:
+These updates make the NPMAI SDK significantly more Production-Ready. We are now processing data faster, retrieving it smarter, and storing it 
+more securely than standard open-source RAG implementations.
+"""
+
+
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.embeddings import HuggingFaceBgeEmbeddings
