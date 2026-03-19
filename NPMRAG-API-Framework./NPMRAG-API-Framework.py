@@ -117,9 +117,12 @@ def get_transcript(link,output_path):
     except Exception as e:
         print(f"\nAn error occurred during download: {e}")
     print("If the error is 'Sign In', you need to provide cookies as mentioned previously.")
+
     clip=VideoFileClip(output_path)
+
     audio=clip.audio
     audio.write_audiofile("temp.wav")
+
     model= get_whisper_model()
     result=model.transcribe("temp.wav")
     text=result["text"]
@@ -153,7 +156,7 @@ def health():
 
 @app.post("/ingestion")
 async def ingest_file(
-    query: str = Form(None),
+    query: str = Form(""),
     DB_PATH: str = Form(None),
     file: list[UploadFile] = File(None),
     link: str = Form(None),
@@ -221,7 +224,7 @@ async def ingest_file(
 
 
 def extractable_router(extracted_texts, DB_PATH=None, query=None, temperature=None, model=None, secret_key=None, Upload=None, public=None):
-    if query is not None and DB_PATH is not None:
+    if query is not "" and DB_PATH is not None:
         stringed_extracted_texts= "\n\n----------\n\n".join(extracted_texts)
         return retrieval(DB_PATH=DB_PATH,query=query,texts=stringed_extracted_texts,temperature=temperature,model=model)
     elif Upload:
@@ -234,11 +237,11 @@ def extractable_router(extracted_texts, DB_PATH=None, query=None, temperature=No
 @app.post("/get_direct_retrieval")
 async def get_retrieval(
     DB_PATH: str = Form(...),
-    query: str = Form(...),
+    query: str = Form(""),
     secret_key: str = Form(None),
     public: bool = Form(None),
 ):
-    if DB_PATH is None and query is None:
+    if DB_PATH is None and query is "":
         return JSONResponse({"response":"Sorry but please pass DB_PATH name and Query name in string data type."})
         
     if os.path.exists(DB_PATH):
@@ -316,7 +319,9 @@ def retrieval(DB_PATH,emb=HuggingFaceBgeEmbeddings(model_name="BAAI/bge-small-en
               allow_dangerous_deserialization=True
           )
           print("2")
-          retriever=vector_db.similarity_search(query,k=4)
+          no_of_chunks= vector_db.index.ntotal
+          dynamic_k= max(1,int(no_of_chunks*0.70))
+          retriever=vector_db.similarity_search(query,k=dynamic_k)
           return preref(text=retriever,question=query,temperature=temperature,model=model)
       
       else:
@@ -408,7 +413,9 @@ def retrieval(DB_PATH,emb=HuggingFaceBgeEmbeddings(model_name="BAAI/bge-small-en
                   return "Sorry please pass at least Secret_key or Public param in order to save your document in Database for persistent memory."
                   
           else:
-              retriever=vector_db.similarity_search(query,k=4)
+              no_of_chunks_d= vector_db.index.ntotal
+              dynamic_k_d= max(1,(no_of_chunks_d*0.70))
+              retriever=vector_db.similarity_search(query,k=dynamic_k_d)
               return preref(text=retriever,question=query,temperature=temperature,model=model)
     else:
       return "Sorry but you have to provide query and DB_PATH also in order to retrieve from Vectorised DataBase"
@@ -442,26 +449,46 @@ class refine:
     answers=[]
     no=len(texts)
     no_of_loop=0
-    for i in range(no):
-      context=texts[i]
+    if no > 2:
+        chunks_send=no/3
+        for i in range(chunks_send):
+            context=texts[i*3:(i+1)*3]
+            final_context="\n---\n".join([doc.page_content for doc in context])
+            prompt=f"""Use the following information to answer the question: 
+            Text: {final_context}
+            Existing Answer: {answers}
+            Question: {question}
+            """
+            
+            llm=Ollama(
+                model=model,
+                temperature=temperature
+            )
+            response=llm.invoke(prompt)
+            
+            if answers:
+                answers.remove(answers[0])
+                answers.append(response)
+            else:
+                answers.append(response)
+            
+            if not no_of_loop==chunks_send:
+                no_of_loop+=1
+            else:
+                pass
+        return response
+    elif no == 2 or no < 2:
+      context_texts=texts[0:2]
+      final_context_e="\n---\n".join([doc.page_content for doc in context_texts])
       prompt=f"""Use the following information to answer the question: 
-      Text: {context}
+      Text: {final_context_e}
       Existing Answer: {answers}
       Question: {question}
       """
+
       llm=Ollama(
           model=model,
           temperature=temperature
       )
-      response=llm.invoke(prompt)
-        
-      if answers:
-        answers.remove(answers[0])
-        answers.append(response)
-      else:
-        answers.append(response)
-      if not no_of_loop==no:
-        no_of_loop+=1
-      else:
-        pass
-    return response
+      response_e=llm.invoke(prompt)
+      return response
