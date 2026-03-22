@@ -20,6 +20,7 @@ Connect with **Ollama** and 10+ other powerful models instantly—**no installat
 - 🔍📑 **Vectorised Database** **Now you can store your any all type of files in vectorised form through npmai for free of cost unlimited time**
 - ⚡ **Framework Ready:** Fully compatible with **LangChain**, **CrewAI**, and other orchestration tools.
 - 🛠️ **Universal API:** Access via Python, JavaScript, C++, Java, or C.
+- 🔍 Tavily Integrated and also integrating MCP Servers and advance tools to make LLM more powerfull
 
 ---
 
