@@ -3,3 +3,4 @@ uvicorn
 pydantic
 langchain
 langchain-ollama
+tavily-python
