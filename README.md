@@ -33,7 +33,11 @@ Connect with **Ollama** and 10+ other powerful models instantly—**no installat
 | `qwen-2.5-coder-7b` | Alibaba's elite coding assistant |
 | `mistral-7b-instruct` | Versatile and efficient instructor model |
 | `phi-3-medium` | Microsoft's highly capable reasoning model |
-| *And many more...* | Falcon, Baichuan-2, InternLM, Vicuna |
+| `Falcon` | From UAE ,TII |
+| `Baichuan-2` | Baichuan from China |
+| `InternLM` | From Sanghai AI Laboratory |
+| `Vicuna` | From LMSYS Org |
+| `gemma3:12b` | A latest AI Model by Google which has knowledge cutoff of 2026 also ***Latest AI Model in NPMAI ECOSYSTEM**|
 
 ---
 
