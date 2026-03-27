@@ -5,6 +5,7 @@
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/sonuramashishnpm/npmai)
 [![PyPI Downloads](https://static.pepy.tech/personalized-badge/npmai?period=total&units=INTERNATIONAL_SYSTEM&left_color=ORANGE&right_color=BRIGHTGREEN&left_text=downloads)](https://pepy.tech/projects/npmai)
 
+
 `npmai` is a lightweight Python package designed to bridge the gap between users and open-source LLMs. 
 
 Connect with **Ollama** and 10+ other powerful models instantly—**no installation, no login, and no API keys required, and help in development of RAG Agents without installing anything locally or on cloud and it is free without sigin or signup or any type of limit.**
@@ -212,8 +213,13 @@ Please star our project on Github please.
 
 Documentation: npmai.netlify.com
 
+
 API Endpoint: npmai-api.onrender.com/llm
 
 Developed with ❤️ to make AI accessible to everyone.
 
 Developer and Maintainer:- Sonu Kumar
+
+# Thankyou Statement:-
+
+**So thankyou for Installations and Support of you people `npmai` PYPI Package achieved 340k+ Installations today and npmai is getting installed daily by 15k Installations.**
