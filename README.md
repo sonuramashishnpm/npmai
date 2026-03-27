@@ -22,6 +22,7 @@ Connect with **Ollama** and 10+ other powerful models instantly—**no installat
 - ⚡ **Framework Ready:** Fully compatible with **LangChain**, **CrewAI**, and other orchestration tools.
 - 🛠️ **Universal API:** Access via Python, JavaScript, C++, Java, or C.
 - 🔍 Tavily Integrated and also integrating MCP Servers and advance tools to make LLM more powerfull
+- 🤖**Future Features:** In v0.1.9 we are going to integrate Offline Ollama also but with integration of pool of MCP Servers and Tools that will advance a 1b Param Model and model will respond in a way you cannot imagine so keep patience we are working on it and soon we will launch it.
 
 ---
 
