@@ -37,7 +37,7 @@ Connect with **Ollama** and 10+ other powerful models instantly—**no installat
 | `Baichuan-2` | Baichuan from China |
 | `InternLM` | From Sanghai AI Laboratory |
 | `Vicuna` | From LMSYS Org |
-| `gemma3:12b` | A latest AI Model by Google which has knowledge cutoff of 2026 also ***Latest AI Model in NPMAI ECOSYSTEM**|
+| `gemma3:12b` | A latest AI Model by Google which has knowledge cutoff of 2026 also **Latest AI Model in NPMAI ECOSYSTEM**|
 
 ---
 
