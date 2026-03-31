@@ -190,11 +190,198 @@
       .projects-grid { padding:0 1rem 1.25rem 1rem; }
     }
 
-    @media (max-width:480px) {
-      .hero p { display:block; margin-left:0; margin-top:6px; }
-      .profile-header { justify-content:center; text-align:center; }
+   @media (max-width: 480px) {
+
+  body {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .hero {
+    padding: 16px 5vw 16px 5vw;
+    text-align: center;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+    margin: 0 auto;
+    display: block;
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+    margin: 8px auto 0;
+    display: block;
+    text-align: center;
+  }
+
+  /* Section Titles */
+  .section-title {
+    font-size: 1.45rem;
+    margin: 2.2rem 0 1.2rem 0;
+    padding: 0 15px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 0 1rem 1.5rem 1rem;
+  }
+
+  .project-card {
+    padding: 1.1rem;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .project-card img {
+    height: 160px;
+    border-radius: 10px;
+  }
+
+  .project-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .project-card p {
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  .counter-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .counter img {
+    width: 100% !important;
+    max-width: 260px;
+    height: auto;
+  }
+
+  .code-section {
+    padding: 2rem 0.8rem;
+  }
+
+  .code-tabs {
+    padding: 0 0.8rem;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .code-tabs button {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  .code-block {
+    margin: 0 0.8rem 1.2rem 0.8rem;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .code-block pre {
+    font-size: 0.88rem;
+    line-height: 1.4;
+  }
+
+  .api-section code,
+  .api-section p,
+  .api-section h2 {
+    margin-left: 0 !important;
+    margin-right: 0;
+    text-align: left;
+    padding: 0 1rem;
+  }
+
+  .api-section code {
+    font-size: 0.9rem;
+  }
+
+  /* About / Profile Section */
+  .about-section {
+    padding: 2rem 1rem;
+  }
+
+  .profile-container {
+    border-radius: 14px;
+    margin: 0 8px;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .profile-img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .profile-details {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .stats-container img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .social-badges {
+    justify-content: center;
+  }
+
+  .social-badges a {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  /* Workflow Images - Full width, centered */
+  section img {
+    width: 100% !important;
+    height: auto !important;
+    margin-left: 0 !important;
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  /* iframe for video */
+  iframe {
+    margin-left: 0 !important;
+    width: 100% !important;
+    border-radius: 12px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 1.4rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Small phones (≤380px) - Extra tight spacing */
+  @media (max-width: 380px) {
+    .hero {
+      padding: 14px 4vw;
     }
 
+    .project-card {
+      padding: 1rem;
+    }
+
+    .code-tabs button {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.78rem;
+    }
+
+    .profile-img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
   </style>
 </head>
 <body>
