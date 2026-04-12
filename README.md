@@ -8,7 +8,7 @@
 
 `npmai` is a lightweight Python package designed to bridge the gap between users and open-source LLMs. 
 
-Connect with **Ollama** and 10+ other powerful models instantly—**no installation, no login, and no API keys required, and help in development of RAG Agents without installing anything locally or on cloud and it is free without sigin or signup or any type of limit.**
+Connect with **Ollama** and 12+ other powerful models instantly—**no installation, no login, and no API keys required, and help in development of RAG Agents without installing anything locally or on cloud and it is free without sigin or signup or any type of limit.**
 
 ---
 
