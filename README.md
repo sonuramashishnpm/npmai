@@ -27,6 +27,11 @@ Connect with **Ollama** and 10+ other powerful models instantly—**no installat
 
 ---
 
+## Achievment for npmai:-
+**We Achieved 627k+ installations this shows reliabity and trust on npmai**
+
+---
+
 ## 🖥️ Supported Models
 
 | Model Name | Description |
