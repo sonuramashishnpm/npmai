@@ -519,9 +519,9 @@
       <button type="button">Baichuan-2-7B</button>
       <button type="button">InternLM-Chat-7B</button>
       <button type="button">Vicuna 7B</button>
+      <button type="button">Gemma2:9b</button>
     </div>
-
-    <!-- Ensure a code-block exists for each button (first shown by default) -->
+    
     <div class="code-block" style="display:block;">
       <pre>
 <h1>### Python  ###</h1>
@@ -2768,6 +2768,183 @@ int main(void) {
       </pre>
     </div>
 
+  <div class="code-block" style="display:block;">
+      <pre>
+<h1>### Python  ###</h1>
+# Gemma2:9b
+from npmai import Ollama
+
+llm = Ollama(
+        model="gemma2:9b",
+        temperature=0.5
+)
+prompts = "Hello, tell me a short summary of NPMAI"
+
+result = llm.invoke(prompts)
+print(result)
+
+<h1>### Java ###</h1>
+import java.net.URI;
+import java.net.http.*;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        var client = HttpClient.newHttpClient();
+        String json = "{\"prompt\": \"Hello world\", \"model\": \"gemma2:9b\", \"temperature\": 0.3}";
+
+        var request = HttpRequest.newBuilder()
+                .uri(URI.create("https://npmai-api.onrender.com/llm"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(json))
+                .build();
+
+        var response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println(response.body());
+    }
+}
+
+<h1>### C++  ###</h1>
+#include <iostream>
+#include <curl/curl.h>
+#include <nlohmann/json.hpp>
+
+int main() {
+    CURL* curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+
+        nlohmann::json j;
+        j["prompt"] = "Hello world";
+        j["model"] = "gemma2:9b";
+        j["temperature"] = 0.3;
+        std::string request_body = j.dump();
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://npmai-api.onrender.com/llm");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, request_body.c_str());
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+
+<h1>###  C  ###</h1>
+#include <stdio.h>
+#include <curl/curl.h>
+
+int main() {
+    CURL *curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+
+        const char *json = "{\"prompt\": \"Hello world\", \"model\": \"gemma2:9b\", \"temperature\": 0.3}";
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://npmai-api.onrender.com/llm");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, json);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+
+
+<h1>########### Huggingface API Endpoint ###########</h1>
+
+<h2><b>Gemma2:9b</b></h2>
+    <code>https://sonuramashish22028704-internlm27b.hf.space/gemma29b</code><br><br>
+    <p>Examples using different langauges:-
+      <b>Java</b><br>
+      <code>import java.net.URI;<br>
+import java.net.http.*;<br><br>
+
+public class HFClient {<br>
+    public static void main(String[] args) throws Exception {<br>
+        var client = HttpClient.newHttpClient();<br>
+        String json = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";<br><br>
+
+        var request = HttpRequest.newBuilder()<br>
+                .uri(URI.create("https://sonuramashish22028704-internlm27b.hf.space/gemma29b"))<br>
+                .header("Content-Type", "application/json")<br>
+                .POST(HttpRequest.BodyPublishers.ofString(json))<br>
+                .build();<br><br>
+
+        var response = client.send(request, HttpResponse.BodyHandlers.ofString());<br>
+        System.out.println(response.body());<br>
+    }
+}
+</code><br>
+      <b>C++</b>
+      <code>#include <iostream>
+#include <curl/curl.h>
+
+int main() {
+    CURL* curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+        
+        const char* data = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-internlm27b.hf.space/gemma29b");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>C</b>
+      <code>#include <stdio.h>
+#include <curl/curl.h>
+
+int main(void) {
+    CURL *curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-internlm27b.hf.space/gemma29b");
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"prompt\": \"Hello world\", \"temperature\": 0.3}");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>Java-Script</b>
+      <code>async function callHuggingFace() {
+    const api_url = "https://sonuramashish22028704-internlm27b.hf.space/gemma29b"; // Direct HF API link
+    const payload = {
+        prompt: "Hello world",
+        temperature: 0.3
+    };
+
+    try {
+        const response = await fetch(api_url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+        const data = await response.json();
+        console.log(data.response);
+    } catch (err) {
+        console.error("Failed:", err);
+    }
+}
+</code>
+
+      </pre>
+    </div>
+
   </section>
   </section>
 
@@ -2781,70 +2958,14 @@ int main(void) {
    </div>
 
     </section>
+  <div style="text-align:center; margin-top:20px">
     <section>
     <h1>NPMAI Updates changelog:-</h1><br>
-    <div id="updatediv">
-      <script>
-    const change_box =  document.getElementById("updatediv");
-    const msgDiv = document.createElement("div");
-    const text = `# 🚀 NPMAI Update: Advanced RAG & Refine Architecture
-  
-  We have officially upgraded the **NPMAI Ecosystem** to a more intelligent, cost-efficient, and "Product-Ready" pipeline. These updates move beyond basic RAG into **High-Performance Agentic Retrieval**.
-  
-  ---
-  
-  ### 🔍 1. Dynamic K-Context Retrieval (70% Coverage)
-  
-  **The Problem:** 
-  Standard RAG systems use a fixed `k` value (e.g., k=4). This is inefficient—it provides too little context for large documents (missing facts) and too much "noise" for tiny documents (wasting tokens).
-  
-  **The Solution:** 
-  I have engineered a **Proportional Scaling Logic** that calculates the optimal number of chunks to retrieve based on the actual density of your vectorized database.
-  
-  *   **Logic:** dynamic_k = max(1, int(total_chunks * 0.70))
-  *   **How it works:**
-      *   **Short Documents:** If your database has only 2 chunks, the system retrieves only those 2.
-      *   **Large PDFs:** If your PDF generates 100 chunks, the system automatically scales up to retrieve **70 relevant chunks** ($k=70$).
-  *   **The Impact:** This ensures the AI always sees a **statistically significant slice** of the knowledge base, adapting perfectly to any document size.
-  
-  ---
-  
-  ### 🔄 2. Sliding Window Batch-Refinement (3-Chunk Window)
-  
-  **The Problem:** 
-  Traditional "Refine" strategies process one chunk at a time. This is incredibly slow because it makes $N$ separate API calls. For a 30-chunk document, the user waits too long.
-  
-  **The Solution:** 
-  I have implemented a **Sliding Window Batch-Refine** system that processes chunks in groups of 3 instead of 1.
-  
-  *   **Logic:** for i in range(0, total_chunks, 3):
-  *   **How it works:**
-      *   Instead of making a single LLM call for every 1,000 characters, the system sends a **batch of 3 related chunks** (3,000 characters) in one go.
-      *   It uses the previous answer as a "Running Memory" to merge new information from the current 3-chunk batch.
-  *   **The Impact:** 
-      *   **3x Faster Execution:** We have reduced total API latency by **66%**.
-      *   **Improved Coherence:** The AI sees a broader context ($3,000$ chars vs $1,000$ chars), allowing it to spot connections between facts that are split across neighboring chunks.
-  
-  ---
-  
-  ### ☁️ 3. Infrastructure: Persistent Supabase Integration (v0.1.8)
-  
-  We have successfully integrated **Supabase Object Storage** to move from temporary memory to **Persistent Knowledge Bases**.
-  
-  *   **Vector Persistence:** All `.faiss` and `.pkl` index files are now automatically uploaded to a secure Supabase bucket.
-  *   **Multi-Platform Access:** This allows **NPM-Rag-AI**, **NPM-AutoCode-AI**, and the **npmai SDK** to share and load the same vectorized data from anywhere in the world.
-  
-  ---
-  **Summary:** 
-  These architectural changes make **NPMAI** one of the most efficient open-source RAG frameworks available for developers who need **Speed + Accuracy** without the high cost of standard 1-by-1 refinement.
-  `;
-  
-    const mdres = marked.parse(text);
-    msgDiv.innerHTML = mdres;
-    change_box.appendChild(msgDiv)
-  </script>
-    </div>
+      <h3>We developed a reaserch paper which adresses major problems of RAG you can check it out by visiting this <a href="https://github.com/sonuramashishnpm/npmai/blob/main/LARA.md">LARA(name of Reaserch Paper)</a></h3><br>
+      <h3>We achieved <b>600K+</b> installations on our pypi package <b>npmai</b></h3><br>
+      <h3>We added Qwen3.5:9b and Gemma3:12b and with this change now we have 12 models our in ecosystem.</h3><br>
     </section>
+  </div>
 
   <!-- About Section -->
   <section class="about-section" aria-labelledby="about">
