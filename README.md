@@ -21,8 +21,9 @@ Connect with **Ollama** and 10+ other powerful models instantly—**no installat
 - 🔍📑 **Vectorised Database** **Now you can store your any all type of files in vectorised form through npmai for free of cost unlimited time**
 - ⚡ **Framework Ready:** Fully compatible with **LangChain**, **CrewAI**, and other orchestration tools.
 - 🛠️ **Universal API:** Access via Python, JavaScript, C++, Java, or C.
-- 🔍 Tavily Integrated and also integrating MCP Servers and advance tools to make LLM more powerfull
-- 🤖**Future Features:** In v0.1.9 we are going to integrate Offline Ollama also but with integration of pool of MCP Servers and Tools that will advance a 1b Param Model and model will respond in a way you cannot imagine so keep patience we are working on it and soon we will launch it.
+- 🔍 **Tavily:** Tavily integrated and also integrating MCP Servers and advance tools to make LLM more powerfull
+- 📑 **LARA**:LARA we developed reaserch paper which addresses major problems of RAG industry.
+- 🤖**Future Features:** In v0.1.9 we are going to integrate ***LARA*** and ***Offline Ollama*** also but with integration of pool of MCP Servers and Tools that will advance a 1b Param Model and model will respond in a way you cannot imagine so keep patience we are working on it and soon we will launch it.
 
 ---
 
@@ -40,6 +41,8 @@ Connect with **Ollama** and 10+ other powerful models instantly—**no installat
 | `InternLM` | From Sanghai AI Laboratory |
 | `Vicuna` | From LMSYS Org |
 | `gemma3:12b` | A latest AI Model by Google which has knowledge cutoff of 2026 also **Latest AI Model in NPMAI ECOSYSTEM**|
+|`gemma2:9b` | Model by Google Deepmind also in *NPMAI ECOSYSTEM* |
+|`qwen3.5:9b` | One of the latest and powerfull model with latest knowledge cutoff year 2026 now in *NPMAI ECOSYSTEM* |
 
 ---
 
