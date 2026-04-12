@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NPMAI - AI Powerhouse</title>
+  <title>NPMAI - AI ECOSYSTEM</title>
   <style>
     /* --- Reset & Fonts --- */
     * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',sans-serif; }
@@ -181,17 +182,206 @@
 
     footer { text-align:center; padding:1.1rem; background:transparent; color:#aaa; margin-top:1rem; }
 
+    
+
     @media (max-width: 900px) {
       .hero { padding-left:4vw; }
       .profile-details { grid-template-columns:1fr; }
       .projects-grid { padding:0 1rem 1.25rem 1rem; }
     }
 
-    @media (max-width:480px) {
-      .hero p { display:block; margin-left:0; margin-top:6px; }
-      .profile-header { justify-content:center; text-align:center; }
+   @media (max-width: 480px) {
+
+  body {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .hero {
+    padding: 16px 5vw 16px 5vw;
+    text-align: center;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+    margin: 0 auto;
+    display: block;
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+    margin: 8px auto 0;
+    display: block;
+    text-align: center;
+  }
+
+  /* Section Titles */
+  .section-title {
+    font-size: 1.45rem;
+    margin: 2.2rem 0 1.2rem 0;
+    padding: 0 15px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 0 1rem 1.5rem 1rem;
+  }
+
+  .project-card {
+    padding: 1.1rem;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .project-card img {
+    height: 160px;
+    border-radius: 10px;
+  }
+
+  .project-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .project-card p {
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  .counter-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .counter img {
+    width: 100% !important;
+    max-width: 260px;
+    height: auto;
+  }
+
+  .code-section {
+    padding: 2rem 0.8rem;
+  }
+
+  .code-tabs {
+    padding: 0 0.8rem;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .code-tabs button {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  .code-block {
+    margin: 0 0.8rem 1.2rem 0.8rem;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .code-block pre {
+    font-size: 0.88rem;
+    line-height: 1.4;
+  }
+
+  .api-section code,
+  .api-section p,
+  .api-section h2 {
+    margin-left: 0 !important;
+    margin-right: 0;
+    text-align: left;
+    padding: 0 1rem;
+  }
+
+  .api-section code {
+    font-size: 0.9rem;
+  }
+
+  /* About / Profile Section */
+  .about-section {
+    padding: 2rem 1rem;
+  }
+
+  .profile-container {
+    border-radius: 14px;
+    margin: 0 8px;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .profile-img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .profile-details {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .stats-container img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .social-badges {
+    justify-content: center;
+  }
+
+  .social-badges a {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  /* Workflow Images - Full width, centered */
+  section img {
+    width: 100% !important;
+    height: auto !important;
+    margin-left: 0 !important;
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  /* iframe for video */
+  iframe {
+    margin-left: 0 !important;
+    width: 100% !important;
+    border-radius: 12px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 1.4rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Small phones (≤380px) - Extra tight spacing */
+  @media (max-width: 380px) {
+    .hero {
+      padding: 14px 4vw;
     }
 
+    .project-card {
+      padding: 1rem;
+    }
+
+    .code-tabs button {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.78rem;
+    }
+
+    .profile-img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
   </style>
 </head>
 <body>
@@ -215,25 +405,24 @@
     <div class="projects-grid">
       <div class="project-card">
        
-        <h3>NPM-Youtube Automation</h3>
-        <p>Automate YouTube workflows powered by NPMAI.</p>
+        <h3>NPM-Social-Media-Automation</h3>
+        <p>One click and upload posts on all Major Social Media Platforms in free of cost where you will just upload video nothing else of automatically npmai will generate meta data including  Captions.</p>
         <a href="https://npmyt.onrender.com" target="_blank" rel="noopener">View Project</a><br>
-        <a href="https://github.com/sonuramashishnpm/NPM-Youtube-Automation/tree/desktop_app" target="_blank" rel="noopener">Github Repo</a>
+        <a href="https://github.com/sonuramashishnpm/NPM-Youtube-Automation/" target="_blank" rel="noopener">Github Repo</a>
       </div>
 
       <div class="project-card">
        
         <h3>NPM-Rag-AI</h3>
-        <p>NPM Rag A.I is a beautiful, easy-to-use web application that lets you instantly create and talk to your own private or public knowledge bases using RAG 
-        (Retrieval-Augmented Generation).</p>
+        <p>NPM Rag A.I is a beautiful, easy-to-use web application that lets you instantly create and talk to your own private or public knowledge bases using RAG (Retrieval-Augmented Generation).</p>
         <a href="https://npmragai.onrender.com" target="_blank" rel="noopener">View Project</a><br>
-        <a href="https://github.com/sonuramashishnpm/NPM-Rag-AI/tree/website" target="_blank" rel="noopener">Github Repo</a>
+        <a href="https://github.com/sonuramashishnpm/NPM-Rag-A.I" target="_blank" rel="noopener">Github Repo</a>
       </div>
 
       <div class="project-card">
        
         <h3>NPM-LEGAL-AI</h3>
-        <p>Legal document automation powered by NPMAI.</p>
+        <p>Legal document Analyser and Chatbot automation powered by NPMAI.</p>
         <a href="https://npmlegalai.onrender.com" target="_blank" rel="noopener">View Project</a><br>
         <a href="https://github.com/sonuramashishnpm/NPM-LEGAL-AI/tree/website" target="_blank" rel="noopener">Github Repo</a>
       </div>
@@ -241,14 +430,14 @@
       <div class="project-card">
        
         <h3>NPM-AutoCode-AI</h3>
-        <p>Code generation and automation using NPMAI.</p>
-        <a href="https://npmcodeai.onrender.com" target="_blank" rel="noopener">View Project</a><br>
-        <a href="https://github.com/sonuramashishnpm/NPM-AutoCode-AI/tree/desktop_app" target="_blank" rel="noopener">Github Repo</a>
+        <p>Autonomous PC Automator where npmai generates code -> clean code -> Security Check -> Self-Healing loop Autonomous Agent</p>
+        <a href="https://npmcodeai.netlify.app" target="_blank" rel="noopener">View Project</a><br>
+        <a href="https://github.com/sonuramashishnpm/NPM-AutoCode-AI/" target="_blank" rel="noopener">Github Repo</a>
       </div>
 
       <div class="project-card">
         <h3>NPM Journalist</h3>
-        <p>Complain govt without any fear :- No identity required to complain to any govt official</p>
+        <p>Complain govt without any fear :- No identity required to complain to any govt official powered by npmai</p>
         <a href="https://npmjournalist.onrender.com" target="_blank" rel="noopener">View Project</a><br>
         <a href="https://github.com/sonuramashishnpm/NPM-Journalist/" target="_blank" rel="noopener">Github Repo</a>
       </div>
@@ -256,7 +445,7 @@
       <div class="project-card">
         <h3>NPMAI ChatBot</h3>
         <p>Voice-powered AI applications via NPMAI.</p>
-        <a href="https://npmvoiceai.onrender.com" target="_blank" rel="noopener">View Project</a><br>
+        <a href="https://npmaichat.onrender.com" target="_blank" rel="noopener">View Project</a><br>
         <a href="https://github.com/sonuramashishnpm/NPMAI-Chatbot/" target="_blank" rel="noopener">Github Repo</a>
       </div>
 
@@ -289,23 +478,26 @@
 
      <div class="project-card">
        <h3>NPM Debate A.I</h3>
-       <p>Infinite Debate Arena</p>
+       <p>Infinite Debate Arena with 4 LLM Debating on a topic with human in the loop.</p>
        <a href="https://npmdebateai.onrender.com" target="_blan" rel="noopener">Visit App</a><br>
        <a href="https://github.com/sonuramashishnpm/NPM-Debater-AI" target="_blank" rel="noopener">Github Repo</a>
      </div>
     </div>
   </section>
 
-  <iframe src="npmaidocs.mp4"></iframe>
+  <iframe src="https://npmai.netlify.app/npmaidocs.mp4" allow="autoplay 'none'"></iframe>
   <h3 style="color:#00ff16; text-align:center; margin-right:94px; margin-top:20px;">Chief Developer & Maintainer of <b>npmai</b> Ecosystem</h3>
 
   <!-- PyPI Section -->
   <section class="counter-section" aria-labelledby="pypi">
     <h2 id="pypi" class="section-title">NPMAI on PyPI</h2>
-    <p>Python package for easy LLM integration. 341k+ installations.</p>
-    <div class="counter">6,514+</div>
+    <p>Python package for easy LLM integration. 6k+ installations.</p>
+    <div class="counter">
+      <img src="https://static.pepy.tech/personalized-badge/npmai?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads" style="width: 200px;"></img>
+    </div>
     <p>Install via <a href="https://pypi.org/project/npmai" target="_blank" rel="noopener">PyPI</a> | Stats: <a href="https://pepy.tech/project/npmai" target="_blank" rel="noopener">Pepy.tech</a></p>
   </section>
+
 
   <!-- Code Snippets Section -->
   <section class="code-section" aria-labelledby="code-examples">
@@ -317,8 +509,9 @@
       <button class="button">Rag</button>
       <button type="button">Temperature uses</button>
       <button type="button">Validated_schema</button>
+      <button type="button">Gemma-3:12b</button>
       <button type="button">CodeLLaMA-Instruct 7B</button>
-      <button type="button">Gemma-2-Instruct 9B</button>
+      <button type="button">Qwen-3.5:9b</button>
       <button type="button">Mistral 7B Instruct</button>
       <button type="button">Qwen-2.5-Coder 7B</button>
       <button type="button">Phi-3 Medium (8B)</button>
@@ -326,9 +519,9 @@
       <button type="button">Baichuan-2-7B</button>
       <button type="button">InternLM-Chat-7B</button>
       <button type="button">Vicuna 7B</button>
+      <button type="button">Gemma2:9b</button>
     </div>
-
-    <!-- Ensure a code-block exists for each button (first shown by default) -->
+    
     <div class="code-block" style="display:block;">
       <pre>
 <h1>### Python  ###</h1>
@@ -416,6 +609,96 @@ int main() {
     return 0;
 }
 
+
+<h1>########### Huggingface API Endpoint ###########</h1>
+
+<h2><b>Llama3.2</b></h2>
+    <code>https://sonuramashish22028704-npmai.hf.space/llm</code><br><br>
+    <p>Examples using different langauges:-
+      <b>Java</b><br>
+      <code>import java.net.URI;<br>
+import java.net.http.*;<br><br>
+
+public class HFClient {<br>
+    public static void main(String[] args) throws Exception {<br>
+        var client = HttpClient.newHttpClient();<br>
+        String json = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";<br><br>
+
+        var request = HttpRequest.newBuilder()<br>
+                .uri(URI.create("https://sonuramashish22028704-npmai.hf.space/llm"))<br>
+                .header("Content-Type", "application/json")<br>
+                .POST(HttpRequest.BodyPublishers.ofString(json))<br>
+                .build();<br><br>
+
+        var response = client.send(request, HttpResponse.BodyHandlers.ofString());<br>
+        System.out.println(response.body());<br>
+    }
+}
+</code><br>
+      <b>C++</b>
+      <code>#include <iostream>
+#include <curl/curl.h>
+
+int main() {
+    CURL* curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+        
+        const char* data = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-npmai.hf.space/llm");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>C</b>
+      <code>#include <stdio.h>
+#include <curl/curl.h>
+
+int main(void) {
+    CURL *curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-npmai.hf.space/llm");
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"prompt\": \"Hello world\", \"temperature\": 0.3}");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>Java-Script</b>
+      <code>async function callHuggingFace() {
+    const api_url = "https://sonuramashish22028704-npmai.hf.space/llm"; // Direct HF API link
+    const payload = {
+        prompt: "Hello world",
+        temperature: 0.3
+    };
+
+    try {
+        const response = await fetch(api_url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+        const data = await response.json();
+        console.log(data.response);
+    } catch (err) {
+        console.error("Failed:", err);
+    }
+}
+</code>
+
       </pre>
     </div>
 
@@ -437,6 +720,14 @@ int main() {
         result= llm.invoke(prompts)
         save_context(prompts,result)
         print(result)
+
+        # If you want to delete memory:-
+
+        "Then just call this method"
+
+        memory.clear_memory()
+
+        "It will remove the file in which conversation was stored"
       </pre>
       </div>
 
@@ -455,17 +746,172 @@ int main() {
         response=rag.send()
         print(response)
 
-        #If you want just conversion of file content into text then just do this:-
+        #If you want to upload your documents for long term:-
         from npmai import Rag
 
         rag=Rag(
-            files="file_name",
+            files=["files_name"],
+            DB_PATH="Enter name which is very unique and relevent to your document.",
+            link="If you want to upload youtube videos as document otherwise do not add this parameter",
+            output_path="Only if you are adding link parameter",
+            secret_key="If you want to make your document very public so add unique password here",
+            public=True("If you do not want to add password then and do not enter anything in secret_key parameter."),
+            Upload=True(If you selected any of these two param:-1.secret_key or 2.public) 
            )
+
         response=rag.send()
         print(response)
         #Whatever file are there just send.
 
-        ### For other languages scroll down you will get that at API Acess section ###
+        # If you just want conversion of your file content in text:- 
+        from npmai import rag
+
+        rag = Rag(
+              files=["files_name"]
+        )
+
+        response= rag.send()
+        print(response)
+
+        <h1><b>NPMAI RAG API FRAMEWORK</b></h1>
+        <code>https://sonuramashish22028704-npmeduai.hf.space/ingestion</code>
+        <p>Examples using different languages:-</p>
+      <h2>
+        <b>### Java ###</b>
+      </h2>
+        <code>
+          import java.net.http.*;
+    import java.nio.file.Paths;
+    
+    public Map<String, Object> send() throws Exception {
+        String HF_API = "https://sonuramashish22028704-npmeduai.hf.space/ingestion";
+        
+        // Using a library like Apache HttpComponents or OkHttp is recommended for Multipart
+        // Below is a conceptual OkHttp implementation
+        OkHttpClient client = new OkHttpClient.Builder()
+            .connectTimeout(600, TimeUnit.SECONDS)
+            .build();
+    
+        RequestBody requestBody = new MultipartBody.Builder()
+            .setType(MultipartBody.FORM)
+            .addFormDataPart("query", this.query)
+            .addFormDataPart("DB_PATH", this.db_path)
+            .addFormDataPart("temperature", String.valueOf(this.temperature))
+            .addFormDataPart("model", this.model)
+            .addFormDataPart("file", "filename", 
+                RequestBody.create(new File(this.files), MediaType.parse("application/octet-stream")))
+            .build();
+    
+        Request request = new Request.Builder().url(HF_API).post(requestBody).build();
+        try (Response response = client.newCall(request).execute()) {
+            JSONObject json = new JSONObject(response.body().string());
+            return Map.of("response", json.get("response"));
+        }
+    }
+    
+        </code><br>
+      
+     <h2> <b>### C++ ###</b></h2>
+      <code>#include <curl/curl.h>
+    
+    void send() {
+        CURL *curl = curl_easy_init();
+        if(curl) {
+            struct curl_httppost *formpost = NULL;
+            struct curl_httppost *lastptr = NULL;
+    
+            curl_formadd(&formpost, &lastptr, CURLFORM_COPYNAME, "query", CURLFORM_COPYCONTENTS, query.c_str(), CURLFORM_END);
+            curl_formadd(&formpost, &lastptr, CURLFORM_COPYNAME, "DB_PATH", CURLFORM_COPYCONTENTS, db_path.c_str(), CURLFORM_END);
+            curl_formadd(&formpost, &lastptr, CURLFORM_COPYNAME, "file", CURLFORM_FILE, files.c_str(), CURLFORM_END);
+            // ... add other fields ...
+    
+            curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-npmeduai.hf.space/ingestion");
+            curl_easy_setopt(curl, CURLOPT_HTTPPOST, formpost);
+            curl_easy_setopt(curl, CURLOPT_TIMEOUT, 600L);
+    
+            CURLcode res = curl_easy_perform(curl);
+            curl_easy_cleanup(curl);
+            curl_formfree(formpost);
+        }
+    }
+    </code><br>
+      <h2><b>### C ###</b></h2>
+      <code>#include <stdio.h>
+    #include <curl/curl.h>
+    
+    void send_request(const char* file_path, const char* query) {
+        CURL *curl;
+        CURLcode res;
+        curl_mime *mime;
+        curl_mimepart *part;
+    
+        curl = curl_easy_init();
+        if(curl) {
+            mime = curl_mime_init(curl);
+    
+            // Text field
+            part = curl_mime_addpart(mime);
+            curl_mime_name(part, "query");
+            curl_mime_data(part, query, CURL_ZERO_TERMINATED);
+    
+            // File field
+            part = curl_mime_addpart(mime);
+            curl_mime_name(part, "file");
+            curl_mime_filedata(part, file_path);
+    
+            curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-npmeduai.hf.space/ingestion");
+            curl_easy_setopt(curl, CURLOPT_MIMEPOST, mime);
+            curl_easy_setopt(curl, CURLOPT_TIMEOUT, 600L);
+    
+            res = curl_easy_perform(curl);
+            
+            curl_easy_cleanup(curl);
+            curl_mime_free(mime);
+        }
+    }
+    </code><br>
+     <h2> <b>### Java-Script</b></h2>
+      <code>async function send() {
+        const HF_API = "https://sonuramashish22028704-npmeduai.hf.space";
+        
+        // 1. Prepare Multipart Data
+        const formData = new FormData();
+        formData.append("query", this.query);
+        formData.append("DB_PATH", this.db_path);
+        formData.append("temperature", this.temperature);
+        formData.append("model", this.model);
+        
+        // For Node.js, use: formData.append("file", await fs.openAsBlob(this.files));
+        formData.append("file", this.files);
+    
+        // 2. Setup Timeout (600 seconds)
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 600000);
+    
+        try {
+            const res = await fetch(HF_API, {
+                method: "POST",
+                body: formData,
+                signal: controller.signal
+                // Note: DO NOT manually set 'Content-Type'; fetch does this automatically for FormData
+            });
+    
+            clearTimeout(timeoutId); // Clean up timer
+    
+            if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+    
+            const data = await res.json();
+            return { response: data.response };
+            
+        } catch (error) {
+            if (error.name === 'AbortError') {
+                return { error: "Request timed out after 600 seconds" };
+            }
+            return { error: error.message };
+        }
+    }
+    </code>
+
       </pre>
     </div>
  
@@ -572,7 +1018,180 @@ print(result)
       </pre>
     </div>
    
+    <div class="code-block" style="display:none;">
+      <pre>
+      <h1>### Python ###</h1>
+      # Gemma3:12b (Latest model with 2026 year knowledge cutoff)
+      from npmai import Ollama
 
+      llm = Ollama(
+              model="gemma3:12b",
+              temperature=0.7
+      )
+
+      prompts = "Hello, tell me about recent UGC changes and also tell me is Khamenei is assasinated"
+
+      result = llm.invoke(prompts)
+      print(result)
+
+      <h1>### Java ###</h1>
+      import java.net.URI;
+      import java.net.http.*;
+      
+      public class Main {
+           public static void main(String[] args) throws Exception {
+               var client = HttpClient.newHttpClient();
+               String json = "{\"prompt\": \"Hello world\", \"model\": \"gemma3:12b\", \"temperature\": 0.3}";
+
+               var request = HttpRequest.newBuilder()
+                    .uri(URI.create("https://npmai-api.onrender.com/llm"))
+                    .header("Content-Type", "application/json")
+                    .POST(HttpRequest.BodyPublishers.ofString(json))
+                    .build();
+
+               var response = client.send(request, HttpResponse.BodyHandlers.ofString());
+               System.out.println(response.body());
+      }}
+
+    <h1>### C++  ###</h1>
+#include <iostream>
+#include <curl/curl.h>
+#include <nlohmann/json.hpp>
+
+int main() {
+    CURL* curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+
+        nlohmann::json j;
+        j["prompt"] = "Hello world";
+        j["model"] = "gemma3:12b";
+        j["temperature"] = 0.3;
+        std::string request_body = j.dump();
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://npmai-api.onrender.com/llm");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, request_body.c_str());
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+
+<h1>###  C  ###</h1>
+#include <stdio.h>
+#include <curl/curl.h>
+
+int main() {
+    CURL *curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+
+        const char *json = "{\"prompt\": \"Hello world\", \"model\": \"gemma3:12b\", \"temperature\": 0.3}";
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://npmai-api.onrender.com/llm");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, json);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+
+<h1>########### Huggingface API Endpoint ###########</h1>
+<h2><b>gemma2:12b</b></h2>
+    <code>https://sonuramashish22028704-vicuna7b.hf.space/gemma</code><br><br>
+    <p>Examples using different langauges:-
+      <b>Java</b>
+      <code>import java.net.URI;
+import java.net.http.*;
+
+public class HFClient {
+    public static void main(String[] args) throws Exception {
+        var client = HttpClient.newHttpClient();
+        String json = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
+
+        var request = HttpRequest.newBuilder()
+                .uri(URI.create("https://sonuramashish22028704-vicuna7b.hf.space/gemma"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(json))
+                .build();
+
+        var response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println(response.body());
+    }
+}
+</code><br>
+      <b>C++</b>
+      <code>#include <iostream>
+#include <curl/curl.h>
+
+int main() {
+    CURL* curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+        
+        const char* data = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-vicuna7b.hf.space/gemma");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>C</b>
+      <code>#include <stdio.h>
+#include <curl/curl.h>
+
+int main(void) {
+    CURL *curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-vicuna7b.hf.space/gemma");
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"prompt\": \"Hello world\", \"temperature\": 0.3}");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>Java-Script</b>
+      <code>async function callHuggingFace() {
+    const api_url = "https://sonuramashish22028704-vicuna7b.hf.space/gemma"; // Direct HF API link
+    const payload = {
+        prompt: "Hello world",
+        temperature: 0.3
+    };
+
+    try {
+        const response = await fetch(api_url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+        const data = await response.json();
+        console.log(data.response);
+    } catch (err) {
+        console.error("Failed:", err);
+    }
+}
+</code>
+
+</pre>
+</div>
     <div class="code-block" style="display:none;">
       <pre>
 <h1>### Python ###</h1>
@@ -657,17 +1276,106 @@ int main() {
     }
     return 0;
 }
+
+<h1>########### Huggingface API Endpoint ###########</h1>
+<h2><b>codellama:7b-instruct</b></h2>
+    <code>https://sonuramashish22028704-falcon7binstruct.hf.space/codellama</code><br><br>
+    <p>Examples using different langauges:-
+      <b>Java</b>
+      <code>import java.net.URI;
+import java.net.http.*;
+
+public class HFClient {
+    public static void main(String[] args) throws Exception {
+        var client = HttpClient.newHttpClient();
+        String json = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
+
+        var request = HttpRequest.newBuilder()
+                .uri(URI.create("https://sonuramashish22028704-falcon7binstruct.hf.space/codellama"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(json))
+                .build();
+
+        var response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println(response.body());
+    }
+}
+</code><br>
+      <b>C++</b>
+      <code>#include <iostream>
+#include <curl/curl.h>
+
+int main() {
+    CURL* curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+        
+        const char* data = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-falcon7binstruct.hf.space/codellama");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>C</b>
+      <code>#include <stdio.h>
+#include <curl/curl.h>
+
+int main(void) {
+    CURL *curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-falcon7binstruct.hf.space/codellama");
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"prompt\": \"Hello world\", \"temperature\": 0.3}");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>Java-Script</b>
+      <code>async function callHuggingFace() {
+    const api_url = "https://sonuramashish22028704-falcon7binstruct.hf.space/codellama"; // Direct HF API link
+    const payload = {
+        prompt: "Hello world",
+        temperature: 0.3
+    };
+
+    try {
+        const response = await fetch(api_url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+        const data = await response.json();
+        console.log(data.response);
+    } catch (err) {
+        console.error("Failed:", err);
+    }
+}
+</code>
+
       </pre>
     </div>
 
     <div class="code-block" style="display:none;">
       <pre>
 <h1>### Python ###</h1>
-# Gemma-2-Instruct 9B
+# Qwen3.5:9b
 from npmai import Ollama
 
 llm = Ollama(
-        model="gemma2:9b",
+        model="qwen3.5:9b",
         temperature=0.7
 )
 prompts = "Hello, tell me a short summary of NPMAI"
@@ -682,7 +1390,7 @@ import java.net.http.*;
 public class Main {
     public static void main(String[] args) throws Exception {
         var client = HttpClient.newHttpClient();
-        String json = "{\"prompt\": \"Hello world\", \"model\": \"gemma2:9b\", \"temperature\": 0.3}";
+        String json = "{\"prompt\": \"Hello world\", \"model\": \"qwen3.5:9b\", \"temperature\": 0.3}";
 
         var request = HttpRequest.newBuilder()
                 .uri(URI.create("https://npmai-api.onrender.com/llm"))
@@ -708,7 +1416,7 @@ int main() {
 
         nlohmann::json j;
         j["prompt"] = "Hello world";
-        j["model"] = "gemma2:9b";
+        j["model"] = "qwen3.5:9b";
         j["temperature"] = 0.3;
         std::string request_body = j.dump();
 
@@ -732,7 +1440,7 @@ int main() {
         struct curl_slist *headers = NULL;
         headers = curl_slist_append(headers, "Content-Type: application/json");
 
-        const char *json = "{\"prompt\": \"Hello world\", \"model\": \"gemma2:9b\", \"temperature\": 0.3}";
+        const char *json = "{\"prompt\": \"Hello world\", \"model\": \"qwen3.5:9b\", \"temperature\": 0.3}";
 
         curl_easy_setopt(curl, CURLOPT_URL, "https://npmai-api.onrender.com/llm");
         curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
@@ -743,6 +1451,95 @@ int main() {
     }
     return 0;
 }
+
+<h1>########### Huggingface API Endpoint ###########</h1>
+<h2><b>Qwen3.5:9b</b></h2>
+    <code>https://sonuramashish22028704-vicuna7b.hf.space/qwen359gb</code><br><br>
+    <p>Examples using different langauges:-
+      <b>Java</b>
+      <code>import java.net.URI;
+import java.net.http.*;
+
+public class HFClient {
+    public static void main(String[] args) throws Exception {
+        var client = HttpClient.newHttpClient();
+        String json = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
+
+        var request = HttpRequest.newBuilder()
+                .uri(URI.create("https://sonuramashish22028704-vicuna7b.hf.space/qwen359gb"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(json))
+                .build();
+
+        var response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println(response.body());
+    }
+}
+</code><br>
+      <b>C++</b>
+      <code>#include <iostream>
+#include <curl/curl.h>
+
+int main() {
+    CURL* curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+        
+        const char* data = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-vicuna7b.hf.space/qwen359gb");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>C</b>
+      <code>#include <stdio.h>
+#include <curl/curl.h>
+
+int main(void) {
+    CURL *curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-vicuna7b.hf.space/qwen359gb");
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"prompt\": \"Hello world\", \"temperature\": 0.3}");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>Java-Script</b>
+      <code>async function callHuggingFace() {
+    const api_url = "https://sonuramashish22028704-vicuna7b.hf.space/qwen359gb"; // Direct HF API link
+    const payload = {
+        prompt: "Hello world",
+        temperature: 0.3
+    };
+
+    try {
+        const response = await fetch(api_url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+        const data = await response.json();
+        console.log(data.response);
+    } catch (err) {
+        console.error("Failed:", err);
+    }
+}
+</code>
+
       </pre>
     </div>
 
@@ -829,6 +1626,95 @@ int main() {
     }
     return 0;
 }
+
+<h1>########### Huggingface API Endpoint ###########</h1>
+<h2><b>mistral:7b</b></h2>
+    <code>https://sonuramashish22028704-mistral7b.hf.space/llm</code><br><br>
+    <p>Examples using different langauges:-
+      <b>Java</b>
+      <code>import java.net.URI;
+import java.net.http.*;
+
+public class HFClient {
+    public static void main(String[] args) throws Exception {
+        var client = HttpClient.newHttpClient();
+        String json = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
+
+        var request = HttpRequest.newBuilder()
+                .uri(URI.create("https://sonuramashish22028704-mistral7b.hf.space/llm"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(json))
+                .build();
+
+        var response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println(response.body());
+    }
+}
+</code><br>
+      <b>C++</b>
+      <code>#include <iostream>
+#include <curl/curl.h>
+
+int main() {
+    CURL* curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+        
+        const char* data = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-mistral7b.hf.space/llm");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>C</b>
+      <code>#include <stdio.h>
+#include <curl/curl.h>
+
+int main(void) {
+    CURL *curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-mistral7b.hf.space/llm");
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"prompt\": \"Hello world\", \"temperature\": 0.3}");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>Java-Script</b>
+      <code>async function callHuggingFace() {
+    const api_url = "https://sonuramashish22028704-mistral7b.hf.space/llm"; // Direct HF API link
+    const payload = {
+        prompt: "Hello world",
+        temperature: 0.3
+    };
+
+    try {
+        const response = await fetch(api_url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+        const data = await response.json();
+        console.log(data.response);
+    } catch (err) {
+        console.error("Failed:", err);
+    }
+}
+</code>
+
       </pre>
     </div>
 
@@ -915,6 +1801,95 @@ int main() {
     }
     return 0;
 }
+
+<h1>########### Huggingface API Endpoint ###########</h1>
+<h2><b>mistral:7b</b></h2>
+    <code>https://sonuramashish22028704-npmai.hf.space/qwen</code><br><br>
+    <p>Examples using different langauges:-
+      <b>Java</b>
+      <code>import java.net.URI;
+import java.net.http.*;
+
+public class HFClient {
+    public static void main(String[] args) throws Exception {
+        var client = HttpClient.newHttpClient();
+        String json = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
+
+        var request = HttpRequest.newBuilder()
+                .uri(URI.create("https://sonuramashish22028704-npmai.hf.space/qwen"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(json))
+                .build();
+
+        var response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println(response.body());
+    }
+}
+</code><br>
+      <b>C++</b>
+      <code>#include <iostream>
+#include <curl/curl.h>
+
+int main() {
+    CURL* curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+        
+        const char* data = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-npmai.hf.space/qwen");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>C</b>
+      <code>#include <stdio.h>
+#include <curl/curl.h>
+
+int main(void) {
+    CURL *curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-npmai.hf.space/qwen");
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"prompt\": \"Hello world\", \"temperature\": 0.3}");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>Java-Script</b>
+      <code>async function callHuggingFace() {
+    const api_url = "https://sonuramashish22028704-npmai.hf.space/qwen"; // Direct HF API link
+    const payload = {
+        prompt: "Hello world",
+        temperature: 0.3
+    };
+
+    try {
+        const response = await fetch(api_url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+        const data = await response.json();
+        console.log(data.response);
+    } catch (err) {
+        console.error("Failed:", err);
+    }
+}
+</code>
+
       </pre>
     </div>
 
@@ -1001,6 +1976,95 @@ int main() {
     }
     return 0;
 }
+
+<h1>########### Huggingface API Endpoint ###########</h1>
+<h2><b>phi3:medium</b></h2>
+    <code>https://sonuramashish22028704-phi3medium.hf.space/llm</code><br><br>
+    <p>Examples using different langauges:-
+      <b>Java</b>
+      <code>import java.net.URI;
+import java.net.http.*;
+
+public class HFClient {
+    public static void main(String[] args) throws Exception {
+        var client = HttpClient.newHttpClient();
+        String json = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
+
+        var request = HttpRequest.newBuilder()
+                .uri(URI.create("https://sonuramashish22028704-phi3medium.hf.space/llm"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(json))
+                .build();
+
+        var response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println(response.body());
+    }
+}
+</code><br>
+      <b>C++</b>
+      <code>#include <iostream>
+#include <curl/curl.h>
+
+int main() {
+    CURL* curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+        
+        const char* data = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-phi3medium.hf.space/llm");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>C</b>
+      <code>#include <stdio.h>
+#include <curl/curl.h>
+
+int main(void) {
+    CURL *curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-phi3medium.hf.space/llm");
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"prompt\": \"Hello world\", \"temperature\": 0.3}");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>Java-Script</b>
+      <code>async function callHuggingFace() {
+    const api_url = "https://sonuramashish22028704-phi3medium.hf.space/llm"; // Direct HF API link
+    const payload = {
+        prompt: "Hello world",
+        temperature: 0.3
+    };
+
+    try {
+        const response = await fetch(api_url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+        const data = await response.json();
+        console.log(data.response);
+    } catch (err) {
+        console.error("Failed:", err);
+    }
+}
+</code>
+
       </pre>
     </div>
 
@@ -1087,6 +2151,95 @@ int main() {
     }
     return 0;
 }
+
+<h1>########### Huggingface API Endpoint ###########</h1>
+<h2><b>falcon:7b-instruct</b></h2>
+    <code>https://sonuramashish22028704-falcon7binstruct.hf.space/llm</code><br><br>
+    <p>Examples using different langauges:-
+      <b>Java</b>
+      <code>import java.net.URI;
+import java.net.http.*;
+
+public class HFClient {
+    public static void main(String[] args) throws Exception {
+        var client = HttpClient.newHttpClient();
+        String json = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
+
+        var request = HttpRequest.newBuilder()
+                .uri(URI.create("https://sonuramashish22028704-falcon7binstruct.hf.space/llm"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(json))
+                .build();
+
+        var response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println(response.body());
+    }
+}
+</code><br>
+      <b>C++</b>
+      <code>#include <iostream>
+#include <curl/curl.h>
+
+int main() {
+    CURL* curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+        
+        const char* data = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-falcon7binstruct.hf.space/llm");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>C</b>
+      <code>#include <stdio.h>
+#include <curl/curl.h>
+
+int main(void) {
+    CURL *curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-falcon7binstruct.hf.space/llm");
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"prompt\": \"Hello world\", \"temperature\": 0.3}");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>Java-Script</b>
+      <code>async function callHuggingFace() {
+    const api_url = "https://sonuramashish22028704-falcon7binstruct.hf.space/llm"; // Direct HF API link
+    const payload = {
+        prompt: "Hello world",
+        temperature: 0.3
+    };
+
+    try {
+        const response = await fetch(api_url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+        const data = await response.json();
+        console.log(data.response);
+    } catch (err) {
+        console.error("Failed:", err);
+    }
+}
+</code>
+
     </pre>
     </div>
 
@@ -1173,6 +2326,95 @@ int main() {
     }
     return 0;
 }
+
+<h1>########### Huggingface API Endpoint ###########</h1>
+<h2><b>maxkb/baichuan2:13b-chat</b></h2>
+    <code>https://sonuramashish22028704-internlm27b.hf.space/baichuan</code><br><br>
+    <p>Examples using different langauges:-
+      <b>Java</b>
+      <code>import java.net.URI;
+import java.net.http.*;
+
+public class HFClient {
+    public static void main(String[] args) throws Exception {
+        var client = HttpClient.newHttpClient();
+        String json = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
+
+        var request = HttpRequest.newBuilder()
+                .uri(URI.create("https://sonuramashish22028704-internlm27b.hf.space/baichuan"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(json))
+                .build();
+
+        var response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println(response.body());
+    }
+}
+</code><br>
+      <b>C++</b>
+      <code>#include <iostream>
+#include <curl/curl.h>
+
+int main() {
+    CURL* curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+        
+        const char* data = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-internlm27b.hf.space/baichuan");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>C</b>
+      <code>#include <stdio.h>
+#include <curl/curl.h>
+
+int main(void) {
+    CURL *curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-internlm27b.hf.space/baichuan");
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"prompt\": \"Hello world\", \"temperature\": 0.3}");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>Java-Script</b>
+      <code>async function callHuggingFace() {
+    const api_url = "https://sonuramashish22028704-internlm27b.hf.space/baichuan"; // Direct HF API link
+    const payload = {
+        prompt: "Hello world",
+        temperature: 0.3
+    };
+
+    try {
+        const response = await fetch(api_url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+        const data = await response.json();
+        console.log(data.response);
+    } catch (err) {
+        console.error("Failed:", err);
+    }
+}
+</code>
+
       </pre>
     </div>
 
@@ -1259,6 +2501,95 @@ int main() {
     }
     return 0;
 }
+
+<h1>########### Huggingface API Endpoint ###########</h1>
+<h2><b>internlm2:7b</b></h2>
+    <code>https://sonuramashish22028704-internlm27b.hf.space/llm</code><br><br>
+    <p>Examples using different langauges:-
+      <b>Java</b>
+      <code>import java.net.URI;
+import java.net.http.*;
+
+public class HFClient {
+    public static void main(String[] args) throws Exception {
+        var client = HttpClient.newHttpClient();
+        String json = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
+
+        var request = HttpRequest.newBuilder()
+                .uri(URI.create("https://sonuramashish22028704-internlm27b.hf.space/llm"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(json))
+                .build();
+
+        var response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println(response.body());
+    }
+}
+</code><br>
+      <b>C++</b>
+      <code>#include <iostream>
+#include <curl/curl.h>
+
+int main() {
+    CURL* curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+        
+        const char* data = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-internlm27b.hf.space/llm");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>C</b>
+      <code>#include <stdio.h>
+#include <curl/curl.h>
+
+int main(void) {
+    CURL *curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-internlm27b.hf.space/llm");
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"prompt\": \"Hello world\", \"temperature\": 0.3}");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>Java-Script</b>
+      <code>async function callHuggingFace() {
+    const api_url = "https://sonuramashish22028704-internlm27b.hf.space/llm"; // Direct HF API link
+    const payload = {
+        prompt: "Hello world",
+        temperature: 0.3
+    };
+
+    try {
+        const response = await fetch(api_url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+        const data = await response.json();
+        console.log(data.response);
+    } catch (err) {
+        console.error("Failed:", err);
+    }
+}
+</code>
+
       </pre>
     </div>
 
@@ -1345,791 +2676,8 @@ int main() {
     }
     return 0;
 }
-      </pre>
-    </div>
 
-  </section>
-
-  <!-- API Section -->
-  <section class="api-section" aria-labelledby="api-access">
-    <h2 id="api-access" class="section-title">API Access</h2>
-    <p><b>Use NPMAI without installing the package via our Render API:</b></p>
-    <code>https://npm-api.onrender.com/llm</code><br>
-    <p><b>Use NPMAI Huggingface endpoint to use LLMs:</b></p>
-    <h2><b>Llama3.2</b></h2>
-    <code>https://sonuramashish22028704-npmai.hf.space/llm</code><br><br>
-    <p>Examples using different langauges:-
-      <b>Java</b><br>
-      <code>import java.net.URI;<br>
-import java.net.http.*;<br><br>
-
-public class HFClient {<br>
-    public static void main(String[] args) throws Exception {<br>
-        var client = HttpClient.newHttpClient();<br>
-        String json = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";<br><br>
-
-        var request = HttpRequest.newBuilder()<br>
-                .uri(URI.create("https://sonuramashish22028704-npmai.hf.space/llm"))<br>
-                .header("Content-Type", "application/json")<br>
-                .POST(HttpRequest.BodyPublishers.ofString(json))<br>
-                .build();<br><br>
-
-        var response = client.send(request, HttpResponse.BodyHandlers.ofString());<br>
-        System.out.println(response.body());<br>
-    }
-}
-</code><br>
-      <b>C++</b>
-      <code>#include <iostream>
-#include <curl/curl.h>
-
-int main() {
-    CURL* curl = curl_easy_init();
-    if(curl) {
-        struct curl_slist *headers = NULL;
-        headers = curl_slist_append(headers, "Content-Type: application/json");
-        
-        const char* data = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
-
-        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-npmai.hf.space/llm");
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
-
-        curl_easy_perform(curl);
-        curl_easy_cleanup(curl);
-    }
-    return 0;
-}
-</code><br>
-      <b>C</b>
-      <code>#include <stdio.h>
-#include <curl/curl.h>
-
-int main(void) {
-    CURL *curl = curl_easy_init();
-    if(curl) {
-        struct curl_slist *headers = NULL;
-        headers = curl_slist_append(headers, "Content-Type: application/json");
-
-        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-npmai.hf.space/llm");
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"prompt\": \"Hello world\", \"temperature\": 0.3}");
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-
-        curl_easy_perform(curl);
-        curl_easy_cleanup(curl);
-    }
-    return 0;
-}
-</code><br>
-      <b>Java-Script</b>
-      <code>async function callHuggingFace() {
-    const api_url = "https://sonuramashish22028704-npmai.hf.space/llm"; // Direct HF API link
-    const payload = {
-        prompt: "Hello world",
-        temperature: 0.3
-    };
-
-    try {
-        const response = await fetch(api_url, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
-        });
-        const data = await response.json();
-        console.log(data.response);
-    } catch (err) {
-        console.error("Failed:", err);
-    }
-}
-</code>
-    <h2><b>gemma2:9b</b></h2>
-    <code>https://sonuramashish22028704-vicuna7b.hf.space/gemma</code><br><br>
-    <p>Examples using different langauges:-
-      <b>Java</b>
-      <code>import java.net.URI;
-import java.net.http.*;
-
-public class HFClient {
-    public static void main(String[] args) throws Exception {
-        var client = HttpClient.newHttpClient();
-        String json = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
-
-        var request = HttpRequest.newBuilder()
-                .uri(URI.create("https://sonuramashish22028704-vicuna7b.hf.space/gemma"))
-                .header("Content-Type", "application/json")
-                .POST(HttpRequest.BodyPublishers.ofString(json))
-                .build();
-
-        var response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.body());
-    }
-}
-</code><br>
-      <b>C++</b>
-      <code>#include <iostream>
-#include <curl/curl.h>
-
-int main() {
-    CURL* curl = curl_easy_init();
-    if(curl) {
-        struct curl_slist *headers = NULL;
-        headers = curl_slist_append(headers, "Content-Type: application/json");
-        
-        const char* data = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
-
-        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-vicuna7b.hf.space/gemma");
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
-
-        curl_easy_perform(curl);
-        curl_easy_cleanup(curl);
-    }
-    return 0;
-}
-</code><br>
-      <b>C</b>
-      <code>#include <stdio.h>
-#include <curl/curl.h>
-
-int main(void) {
-    CURL *curl = curl_easy_init();
-    if(curl) {
-        struct curl_slist *headers = NULL;
-        headers = curl_slist_append(headers, "Content-Type: application/json");
-
-        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-vicuna7b.hf.space/gemma");
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"prompt\": \"Hello world\", \"temperature\": 0.3}");
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-
-        curl_easy_perform(curl);
-        curl_easy_cleanup(curl);
-    }
-    return 0;
-}
-</code><br>
-      <b>Java-Script</b>
-      <code>async function callHuggingFace() {
-    const api_url = "https://sonuramashish22028704-vicuna7b.hf.space/gemma"; // Direct HF API link
-    const payload = {
-        prompt: "Hello world",
-        temperature: 0.3
-    };
-
-    try {
-        const response = await fetch(api_url, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
-        });
-        const data = await response.json();
-        console.log(data.response);
-    } catch (err) {
-        console.error("Failed:", err);
-    }
-}
-</code>
-    <h2><b>codellama:7b-instruct</b></h2>
-    <code>https://sonuramashish22028704-falcon7binstruct.hf.space/codellama</code><br><br>
-    <p>Examples using different langauges:-
-      <b>Java</b>
-      <code>import java.net.URI;
-import java.net.http.*;
-
-public class HFClient {
-    public static void main(String[] args) throws Exception {
-        var client = HttpClient.newHttpClient();
-        String json = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
-
-        var request = HttpRequest.newBuilder()
-                .uri(URI.create("https://sonuramashish22028704-falcon7binstruct.hf.space/codellama"))
-                .header("Content-Type", "application/json")
-                .POST(HttpRequest.BodyPublishers.ofString(json))
-                .build();
-
-        var response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.body());
-    }
-}
-</code><br>
-      <b>C++</b>
-      <code>#include <iostream>
-#include <curl/curl.h>
-
-int main() {
-    CURL* curl = curl_easy_init();
-    if(curl) {
-        struct curl_slist *headers = NULL;
-        headers = curl_slist_append(headers, "Content-Type: application/json");
-        
-        const char* data = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
-
-        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-falcon7binstruct.hf.space/codellama");
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
-
-        curl_easy_perform(curl);
-        curl_easy_cleanup(curl);
-    }
-    return 0;
-}
-</code><br>
-      <b>C</b>
-      <code>#include <stdio.h>
-#include <curl/curl.h>
-
-int main(void) {
-    CURL *curl = curl_easy_init();
-    if(curl) {
-        struct curl_slist *headers = NULL;
-        headers = curl_slist_append(headers, "Content-Type: application/json");
-
-        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-falcon7binstruct.hf.space/codellama");
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"prompt\": \"Hello world\", \"temperature\": 0.3}");
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-
-        curl_easy_perform(curl);
-        curl_easy_cleanup(curl);
-    }
-    return 0;
-}
-</code><br>
-      <b>Java-Script</b>
-      <code>async function callHuggingFace() {
-    const api_url = "https://sonuramashish22028704-falcon7binstruct.hf.space/codellama"; // Direct HF API link
-    const payload = {
-        prompt: "Hello world",
-        temperature: 0.3
-    };
-
-    try {
-        const response = await fetch(api_url, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
-        });
-        const data = await response.json();
-        console.log(data.response);
-    } catch (err) {
-        console.error("Failed:", err);
-    }
-}
-</code>
-    <h2><b>mistral:7b</b></h2>
-    <code>https://sonuramashish22028704-mistral7b.hf.space/llm</code><br><br>
-    <p>Examples using different langauges:-
-      <b>Java</b>
-      <code>import java.net.URI;
-import java.net.http.*;
-
-public class HFClient {
-    public static void main(String[] args) throws Exception {
-        var client = HttpClient.newHttpClient();
-        String json = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
-
-        var request = HttpRequest.newBuilder()
-                .uri(URI.create("https://sonuramashish22028704-mistral7b.hf.space/llm"))
-                .header("Content-Type", "application/json")
-                .POST(HttpRequest.BodyPublishers.ofString(json))
-                .build();
-
-        var response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.body());
-    }
-}
-</code><br>
-      <b>C++</b>
-      <code>#include <iostream>
-#include <curl/curl.h>
-
-int main() {
-    CURL* curl = curl_easy_init();
-    if(curl) {
-        struct curl_slist *headers = NULL;
-        headers = curl_slist_append(headers, "Content-Type: application/json");
-        
-        const char* data = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
-
-        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-mistral7b.hf.space/llm");
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
-
-        curl_easy_perform(curl);
-        curl_easy_cleanup(curl);
-    }
-    return 0;
-}
-</code><br>
-      <b>C</b>
-      <code>#include <stdio.h>
-#include <curl/curl.h>
-
-int main(void) {
-    CURL *curl = curl_easy_init();
-    if(curl) {
-        struct curl_slist *headers = NULL;
-        headers = curl_slist_append(headers, "Content-Type: application/json");
-
-        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-mistral7b.hf.space/llm");
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"prompt\": \"Hello world\", \"temperature\": 0.3}");
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-
-        curl_easy_perform(curl);
-        curl_easy_cleanup(curl);
-    }
-    return 0;
-}
-</code><br>
-      <b>Java-Script</b>
-      <code>async function callHuggingFace() {
-    const api_url = "https://sonuramashish22028704-mistral7b.hf.space/llm"; // Direct HF API link
-    const payload = {
-        prompt: "Hello world",
-        temperature: 0.3
-    };
-
-    try {
-        const response = await fetch(api_url, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
-        });
-        const data = await response.json();
-        console.log(data.response);
-    } catch (err) {
-        console.error("Failed:", err);
-    }
-}
-</code>
-    <h2><b>qwen2.5-coder:7b</b></h2>
-    <code>https://sonuramashish22028704-npmai.hf.space/qwen</code><br><br>
-    <p>Examples using different langauges:-
-      <b>Java</b>
-      <code>import java.net.URI;
-import java.net.http.*;
-
-public class HFClient {
-    public static void main(String[] args) throws Exception {
-        var client = HttpClient.newHttpClient();
-        String json = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
-
-        var request = HttpRequest.newBuilder()
-                .uri(URI.create("https://sonuramashish22028704-npmai.hf.space/qwen"))
-                .header("Content-Type", "application/json")
-                .POST(HttpRequest.BodyPublishers.ofString(json))
-                .build();
-
-        var response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.body());
-    }
-}
-</code><br>
-      <b>C++</b>
-      <code>#include <iostream>
-#include <curl/curl.h>
-
-int main() {
-    CURL* curl = curl_easy_init();
-    if(curl) {
-        struct curl_slist *headers = NULL;
-        headers = curl_slist_append(headers, "Content-Type: application/json");
-        
-        const char* data = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
-
-        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-npmai.hf.space/qwen");
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
-
-        curl_easy_perform(curl);
-        curl_easy_cleanup(curl);
-    }
-    return 0;
-}
-</code><br>
-      <b>C</b>
-      <code>#include <stdio.h>
-#include <curl/curl.h>
-
-int main(void) {
-    CURL *curl = curl_easy_init();
-    if(curl) {
-        struct curl_slist *headers = NULL;
-        headers = curl_slist_append(headers, "Content-Type: application/json");
-
-        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-npmai.hf.space/qwen");
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"prompt\": \"Hello world\", \"temperature\": 0.3}");
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-
-        curl_easy_perform(curl);
-        curl_easy_cleanup(curl);
-    }
-    return 0;
-}
-</code><br>
-      <b>Java-Script</b>
-      <code>async function callHuggingFace() {
-    const api_url = "https://sonuramashish22028704-npmai.hf.space/qwen"; // Direct HF API link
-    const payload = {
-        prompt: "Hello world",
-        temperature: 0.3
-    };
-
-    try {
-        const response = await fetch(api_url, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
-        });
-        const data = await response.json();
-        console.log(data.response);
-    } catch (err) {
-        console.error("Failed:", err);
-    }
-}
-</code>
-    <h2><b>phi3:medium</b></h2>
-    <code>https://sonuramashish22028704-phi3medium.hf.space/llm</code><br><br>
-    <p>Examples using different langauges:-
-      <b>Java</b>
-      <code>import java.net.URI;
-import java.net.http.*;
-
-public class HFClient {
-    public static void main(String[] args) throws Exception {
-        var client = HttpClient.newHttpClient();
-        String json = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
-
-        var request = HttpRequest.newBuilder()
-                .uri(URI.create("https://sonuramashish22028704-phi3medium.hf.space/llm"))
-                .header("Content-Type", "application/json")
-                .POST(HttpRequest.BodyPublishers.ofString(json))
-                .build();
-
-        var response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.body());
-    }
-}
-</code><br>
-      <b>C++</b>
-      <code>#include <iostream>
-#include <curl/curl.h>
-
-int main() {
-    CURL* curl = curl_easy_init();
-    if(curl) {
-        struct curl_slist *headers = NULL;
-        headers = curl_slist_append(headers, "Content-Type: application/json");
-        
-        const char* data = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
-
-        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-phi3medium.hf.space/llm");
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
-
-        curl_easy_perform(curl);
-        curl_easy_cleanup(curl);
-    }
-    return 0;
-}
-</code><br>
-      <b>C</b>
-      <code>#include <stdio.h>
-#include <curl/curl.h>
-
-int main(void) {
-    CURL *curl = curl_easy_init();
-    if(curl) {
-        struct curl_slist *headers = NULL;
-        headers = curl_slist_append(headers, "Content-Type: application/json");
-
-        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-phi3medium.hf.space/llm");
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"prompt\": \"Hello world\", \"temperature\": 0.3}");
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-
-        curl_easy_perform(curl);
-        curl_easy_cleanup(curl);
-    }
-    return 0;
-}
-</code><br>
-      <b>Java-Script</b>
-      <code>async function callHuggingFace() {
-    const api_url = "https://sonuramashish22028704-phi3medium.hf.space/llm"; // Direct HF API link
-    const payload = {
-        prompt: "Hello world",
-        temperature: 0.3
-    };
-
-    try {
-        const response = await fetch(api_url, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
-        });
-        const data = await response.json();
-        console.log(data.response);
-    } catch (err) {
-        console.error("Failed:", err);
-    }
-}
-</code>
-    <h2><b>falcon:7b-instruct</b></h2>
-    <code>https://sonuramashish22028704-falcon7binstruct.hf.space/llm</code><br><br>
-    <p>Examples using different langauges:-
-      <b>Java</b>
-      <code>import java.net.URI;
-import java.net.http.*;
-
-public class HFClient {
-    public static void main(String[] args) throws Exception {
-        var client = HttpClient.newHttpClient();
-        String json = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
-
-        var request = HttpRequest.newBuilder()
-                .uri(URI.create("https://sonuramashish22028704-falcon7binstruct.hf.space/llm"))
-                .header("Content-Type", "application/json")
-                .POST(HttpRequest.BodyPublishers.ofString(json))
-                .build();
-
-        var response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.body());
-    }
-}
-</code><br>
-      <b>C++</b>
-      <code>#include <iostream>
-#include <curl/curl.h>
-
-int main() {
-    CURL* curl = curl_easy_init();
-    if(curl) {
-        struct curl_slist *headers = NULL;
-        headers = curl_slist_append(headers, "Content-Type: application/json");
-        
-        const char* data = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
-
-        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-falcon7binstruct.hf.space/llm");
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
-
-        curl_easy_perform(curl);
-        curl_easy_cleanup(curl);
-    }
-    return 0;
-}
-</code><br>
-      <b>C</b>
-      <code>#include <stdio.h>
-#include <curl/curl.h>
-
-int main(void) {
-    CURL *curl = curl_easy_init();
-    if(curl) {
-        struct curl_slist *headers = NULL;
-        headers = curl_slist_append(headers, "Content-Type: application/json");
-
-        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-falcon7binstruct.hf.space/llm");
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"prompt\": \"Hello world\", \"temperature\": 0.3}");
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-
-        curl_easy_perform(curl);
-        curl_easy_cleanup(curl);
-    }
-    return 0;
-}
-</code><br>
-      <b>Java-Script</b>
-      <code>async function callHuggingFace() {
-    const api_url = "https://sonuramashish22028704-falcon7binstruct.hf.space/llm"; // Direct HF API link
-    const payload = {
-        prompt: "Hello world",
-        temperature: 0.3
-    };
-
-    try {
-        const response = await fetch(api_url, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
-        });
-        const data = await response.json();
-        console.log(data.response);
-    } catch (err) {
-        console.error("Failed:", err);
-    }
-}
-</code>
-    <h2><b>maxkb/baichuan2:13b-chat</b></h2>
-    <code>https://sonuramashish22028704-internlm27b.hf.space/baichuan</code><br><br>
-    <p>Examples using different langauges:-
-      <b>Java</b>
-      <code>import java.net.URI;
-import java.net.http.*;
-
-public class HFClient {
-    public static void main(String[] args) throws Exception {
-        var client = HttpClient.newHttpClient();
-        String json = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
-
-        var request = HttpRequest.newBuilder()
-                .uri(URI.create("https://sonuramashish22028704-internlm27b.hf.space/baichuan"))
-                .header("Content-Type", "application/json")
-                .POST(HttpRequest.BodyPublishers.ofString(json))
-                .build();
-
-        var response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.body());
-    }
-}
-</code><br>
-      <b>C++</b>
-      <code>#include <iostream>
-#include <curl/curl.h>
-
-int main() {
-    CURL* curl = curl_easy_init();
-    if(curl) {
-        struct curl_slist *headers = NULL;
-        headers = curl_slist_append(headers, "Content-Type: application/json");
-        
-        const char* data = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
-
-        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-internlm27b.hf.space/baichuan");
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
-
-        curl_easy_perform(curl);
-        curl_easy_cleanup(curl);
-    }
-    return 0;
-}
-</code><br>
-      <b>C</b>
-      <code>#include <stdio.h>
-#include <curl/curl.h>
-
-int main(void) {
-    CURL *curl = curl_easy_init();
-    if(curl) {
-        struct curl_slist *headers = NULL;
-        headers = curl_slist_append(headers, "Content-Type: application/json");
-
-        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-internlm27b.hf.space/baichuan");
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"prompt\": \"Hello world\", \"temperature\": 0.3}");
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-
-        curl_easy_perform(curl);
-        curl_easy_cleanup(curl);
-    }
-    return 0;
-}
-</code><br>
-      <b>Java-Script</b>
-      <code>async function callHuggingFace() {
-    const api_url = "https://sonuramashish22028704-internlm27b.hf.space/baichuan"; // Direct HF API link
-    const payload = {
-        prompt: "Hello world",
-        temperature: 0.3
-    };
-
-    try {
-        const response = await fetch(api_url, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
-        });
-        const data = await response.json();
-        console.log(data.response);
-    } catch (err) {
-        console.error("Failed:", err);
-    }
-}
-</code>
-    <h2><b>internlm2:7b</b></h2>
-    <code>https://sonuramashish22028704-internlm27b.hf.space/llm</code><br><br>
-    <p>Examples using different langauges:-
-      <b>Java</b>
-      <code>import java.net.URI;
-import java.net.http.*;
-
-public class HFClient {
-    public static void main(String[] args) throws Exception {
-        var client = HttpClient.newHttpClient();
-        String json = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
-
-        var request = HttpRequest.newBuilder()
-                .uri(URI.create("https://sonuramashish22028704-internlm27b.hf.space/llm"))
-                .header("Content-Type", "application/json")
-                .POST(HttpRequest.BodyPublishers.ofString(json))
-                .build();
-
-        var response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.body());
-    }
-}
-</code><br>
-      <b>C++</b>
-      <code>#include <iostream>
-#include <curl/curl.h>
-
-int main() {
-    CURL* curl = curl_easy_init();
-    if(curl) {
-        struct curl_slist *headers = NULL;
-        headers = curl_slist_append(headers, "Content-Type: application/json");
-        
-        const char* data = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
-
-        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-internlm27b.hf.space/llm");
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
-
-        curl_easy_perform(curl);
-        curl_easy_cleanup(curl);
-    }
-    return 0;
-}
-</code><br>
-      <b>C</b>
-      <code>#include <stdio.h>
-#include <curl/curl.h>
-
-int main(void) {
-    CURL *curl = curl_easy_init();
-    if(curl) {
-        struct curl_slist *headers = NULL;
-        headers = curl_slist_append(headers, "Content-Type: application/json");
-
-        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-internlm27b.hf.space/llm");
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"prompt\": \"Hello world\", \"temperature\": 0.3}");
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-
-        curl_easy_perform(curl);
-        curl_easy_cleanup(curl);
-    }
-    return 0;
-}
-</code><br>
-      <b>Java-Script</b>
-      <code>async function callHuggingFace() {
-    const api_url = "https://sonuramashish22028704-internlm27b.hf.space/llm"; // Direct HF API link
-    const payload = {
-        prompt: "Hello world",
-        temperature: 0.3
-    };
-
-    try {
-        const response = await fetch(api_url, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
-        });
-        const data = await response.json();
-        console.log(data.response);
-    } catch (err) {
-        console.error("Failed:", err);
-    }
-}
-</code>
+<h1>########### Huggingface API Endpoint ###########</h1>
     <h2><b>vicuna:7b</b></h2>
     <code>https://sonuramashish22028704-vicuna7b.hf.space/llm</code><br><br>
     <p>Examples using different langauges:-
@@ -2216,145 +2764,206 @@ int main(void) {
     }
 }
 </code>
-    <h1><b>NPMAI RAG API FRAMEWORK</b></h1>
-    <code>https://sonuramashish22028704-npmeduai.hf.space/ingestion</code>
-    <p>Examples using different languages:-</p>
-  <h2>
-    <b>### Java ###</b>
-  </h2>
-    <code>
-      import java.net.http.*;
-import java.nio.file.Paths;
 
-public Map<String, Object> send() throws Exception {
-    String HF_API = "https://sonuramashish22028704-npmeduai.hf.space/ingestion";
-    
-    // Using a library like Apache HttpComponents or OkHttp is recommended for Multipart
-    // Below is a conceptual OkHttp implementation
-    OkHttpClient client = new OkHttpClient.Builder()
-        .connectTimeout(600, TimeUnit.SECONDS)
-        .build();
+      </pre>
+    </div>
 
-    RequestBody requestBody = new MultipartBody.Builder()
-        .setType(MultipartBody.FORM)
-        .addFormDataPart("query", this.query)
-        .addFormDataPart("DB_PATH", this.db_path)
-        .addFormDataPart("temperature", String.valueOf(this.temperature))
-        .addFormDataPart("model", this.model)
-        .addFormDataPart("file", "filename", 
-            RequestBody.create(new File(this.files), MediaType.parse("application/octet-stream")))
-        .build();
+  <div class="code-block" style="display:block;">
+      <pre>
+<h1>### Python  ###</h1>
+# Gemma2:9b
+from npmai import Ollama
 
-    Request request = new Request.Builder().url(HF_API).post(requestBody).build();
-    try (Response response = client.newCall(request).execute()) {
-        JSONObject json = new JSONObject(response.body().string());
-        return Map.of("response", json.get("response"));
+llm = Ollama(
+        model="gemma2:9b",
+        temperature=0.5
+)
+prompts = "Hello, tell me a short summary of NPMAI"
+
+result = llm.invoke(prompts)
+print(result)
+
+<h1>### Java ###</h1>
+import java.net.URI;
+import java.net.http.*;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        var client = HttpClient.newHttpClient();
+        String json = "{\"prompt\": \"Hello world\", \"model\": \"gemma2:9b\", \"temperature\": 0.3}";
+
+        var request = HttpRequest.newBuilder()
+                .uri(URI.create("https://npmai-api.onrender.com/llm"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(json))
+                .build();
+
+        var response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println(response.body());
     }
 }
 
-    </code><br>
-  
- <h2> <b>### C++ ###</b></h2>
-  <code>#include <curl/curl.h>
+<h1>### C++  ###</h1>
+#include <iostream>
+#include <curl/curl.h>
+#include <nlohmann/json.hpp>
 
-void send() {
-    CURL *curl = curl_easy_init();
+int main() {
+    CURL* curl = curl_easy_init();
     if(curl) {
-        struct curl_httppost *formpost = NULL;
-        struct curl_httppost *lastptr = NULL;
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
 
-        curl_formadd(&formpost, &lastptr, CURLFORM_COPYNAME, "query", CURLFORM_COPYCONTENTS, query.c_str(), CURLFORM_END);
-        curl_formadd(&formpost, &lastptr, CURLFORM_COPYNAME, "DB_PATH", CURLFORM_COPYCONTENTS, db_path.c_str(), CURLFORM_END);
-        curl_formadd(&formpost, &lastptr, CURLFORM_COPYNAME, "file", CURLFORM_FILE, files.c_str(), CURLFORM_END);
-        // ... add other fields ...
+        nlohmann::json j;
+        j["prompt"] = "Hello world";
+        j["model"] = "gemma2:9b";
+        j["temperature"] = 0.3;
+        std::string request_body = j.dump();
 
-        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-npmeduai.hf.space/ingestion");
-        curl_easy_setopt(curl, CURLOPT_HTTPPOST, formpost);
-        curl_easy_setopt(curl, CURLOPT_TIMEOUT, 600L);
+        curl_easy_setopt(curl, CURLOPT_URL, "https://npmai-api.onrender.com/llm");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, request_body.c_str());
 
-        CURLcode res = curl_easy_perform(curl);
+        curl_easy_perform(curl);
         curl_easy_cleanup(curl);
-        curl_formfree(formpost);
     }
+    return 0;
 }
-</code><br>
-  <h2><b>### C ###</b></h2>
-  <code>#include <stdio.h>
+
+<h1>###  C  ###</h1>
+#include <stdio.h>
 #include <curl/curl.h>
 
-void send_request(const char* file_path, const char* query) {
-    CURL *curl;
-    CURLcode res;
-    curl_mime *mime;
-    curl_mimepart *part;
-
-    curl = curl_easy_init();
+int main() {
+    CURL *curl = curl_easy_init();
     if(curl) {
-        mime = curl_mime_init(curl);
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
 
-        // Text field
-        part = curl_mime_addpart(mime);
-        curl_mime_name(part, "query");
-        curl_mime_data(part, query, CURL_ZERO_TERMINATED);
+        const char *json = "{\"prompt\": \"Hello world\", \"model\": \"gemma2:9b\", \"temperature\": 0.3}";
 
-        // File field
-        part = curl_mime_addpart(mime);
-        curl_mime_name(part, "file");
-        curl_mime_filedata(part, file_path);
+        curl_easy_setopt(curl, CURLOPT_URL, "https://npmai-api.onrender.com/llm");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, json);
 
-        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-npmeduai.hf.space/ingestion");
-        curl_easy_setopt(curl, CURLOPT_MIMEPOST, mime);
-        curl_easy_setopt(curl, CURLOPT_TIMEOUT, 600L);
-
-        res = curl_easy_perform(curl);
-        
+        curl_easy_perform(curl);
         curl_easy_cleanup(curl);
-        curl_mime_free(mime);
+    }
+    return 0;
+}
+
+
+<h1>########### Huggingface API Endpoint ###########</h1>
+
+<h2><b>Gemma2:9b</b></h2>
+    <code>https://sonuramashish22028704-internlm27b.hf.space/gemma29b</code><br><br>
+    <p>Examples using different langauges:-
+      <b>Java</b><br>
+      <code>import java.net.URI;<br>
+import java.net.http.*;<br><br>
+
+public class HFClient {<br>
+    public static void main(String[] args) throws Exception {<br>
+        var client = HttpClient.newHttpClient();<br>
+        String json = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";<br><br>
+
+        var request = HttpRequest.newBuilder()<br>
+                .uri(URI.create("https://sonuramashish22028704-internlm27b.hf.space/gemma29b"))<br>
+                .header("Content-Type", "application/json")<br>
+                .POST(HttpRequest.BodyPublishers.ofString(json))<br>
+                .build();<br><br>
+
+        var response = client.send(request, HttpResponse.BodyHandlers.ofString());<br>
+        System.out.println(response.body());<br>
     }
 }
 </code><br>
- <h2> <b>### Java-Script</b></h2>
-  <code>async function send() {
-    const HF_API = "https://sonuramashish22028704-npmeduai.hf.space";
-    
-    // 1. Prepare Multipart Data
-    const formData = new FormData();
-    formData.append("query", this.query);
-    formData.append("DB_PATH", this.db_path);
-    formData.append("temperature", this.temperature);
-    formData.append("model", this.model);
-    
-    // For Node.js, use: formData.append("file", await fs.openAsBlob(this.files));
-    formData.append("file", this.files);
+      <b>C++</b>
+      <code>#include <iostream>
+#include <curl/curl.h>
 
-    // 2. Setup Timeout (600 seconds)
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 600000);
+int main() {
+    CURL* curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+        
+        const char* data = "{\"prompt\": \"Hello world\", \"temperature\": 0.3}";
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-internlm27b.hf.space/gemma29b");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>C</b>
+      <code>#include <stdio.h>
+#include <curl/curl.h>
+
+int main(void) {
+    CURL *curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+
+        curl_easy_setopt(curl, CURLOPT_URL, "https://sonuramashish22028704-internlm27b.hf.space/gemma29b");
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"prompt\": \"Hello world\", \"temperature\": 0.3}");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+
+        curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
+}
+</code><br>
+      <b>Java-Script</b>
+      <code>async function callHuggingFace() {
+    const api_url = "https://sonuramashish22028704-internlm27b.hf.space/gemma29b"; // Direct HF API link
+    const payload = {
+        prompt: "Hello world",
+        temperature: 0.3
+    };
 
     try {
-        const res = await fetch(HF_API, {
+        const response = await fetch(api_url, {
             method: "POST",
-            body: formData,
-            signal: controller.signal
-            // Note: DO NOT manually set 'Content-Type'; fetch does this automatically for FormData
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
         });
-
-        clearTimeout(timeoutId); // Clean up timer
-
-        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-
-        const data = await res.json();
-        return { response: data.response };
-        
-    } catch (error) {
-        if (error.name === 'AbortError') {
-            return { error: "Request timed out after 600 seconds" };
-        }
-        return { error: error.message };
+        const data = await response.json();
+        console.log(data.response);
+    } catch (err) {
+        console.error("Failed:", err);
     }
 }
 </code>
+
+      </pre>
+    </div>
+
   </section>
+  </section>
+
+  <section>
+   <div>
+    <h1 style="text-align: center;">Workflow-Diagram:-</h1><br>
+      <h2 style="text-align: center;">1. npmai</h2><br>
+      <img src="https://i.ibb.co/NgChKgHP/npmai.png" style="margin-left: 500px; width: 700px"><br>
+    <h2 style="text-align: center;">2. npmai Rag</h2><br>
+    <img src="https://i.ibb.co/W43CqndR/NPMAI-RAG-API-Pipleline.png" style="margin-left: 500px; width: 700px">
+   </div>
+
+    </section>
+    <section>
+    <h1>NPMAI Updates changelog:-</h1><br>
+      <h3>We developed a reaserch paper which adresses major problems of RAG you can check it out by visiting this <a href="https://github.com/sonuramashishnpm/npmai/blob/main/LARA.md">LARA(name of Reaserch Paper)</a>
+      <h3>We achieved <b>600K+</b> installations on our pypi package <b>npmai</b>
+      <h3>We added Qwen3.5:9b and Gemma3:12b and with this change now we have 12 models our in ecosystem.</h3>
+    </section>
 
   <!-- About Section -->
   <section class="about-section" aria-labelledby="about">
