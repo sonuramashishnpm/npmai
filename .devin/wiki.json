@@ -1,0 +1,301 @@
+{
+  "repo_notes": [
+    {
+      "content": ""
+    }
+  ],
+  "pages": [
+    {
+      "title": "Overview",
+      "purpose": "Introduce the npmai ecosystem, explaining the 'Zero Setup' philosophy, core capabilities (LLM interface, RAG, Memory), and the high-level system architecture",
+      "page_notes": [
+        {
+          "content": "Read whole repo and different branches"
+        }
+      ]
+    },
+    {
+      "title": "Getting Started",
+      "purpose": "Guide users through initial setup and basic usage patterns",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Installation",
+      "purpose": "Explain how to install npmai from PyPI and verify the installation",
+      "parent": "Getting Started",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Quick Start Guide",
+      "purpose": "Provide basic code examples for Ollama, Memory, and Rag classes to get users running quickly",
+      "parent": "Getting Started",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Supported Models",
+      "purpose": "List all available LLM models and their characteristics",
+      "parent": "Getting Started",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Core Python Package",
+      "purpose": "Deep dive into the npmai package structure and its three main classes",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Ollama Class",
+      "purpose": "Document the Ollama class: initialization, invoke method, dual-gateway architecture, and schema validation",
+      "parent": "Core Python Package",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Memory Class",
+      "purpose": "Explain the Memory class for conversation management: save_context, load_memory_variables, clear_memory, and file-based persistence",
+      "parent": "Core Python Package",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Rag Class",
+      "purpose": "Detail the Rag class: file processing, query handling, send() method, vector_db_use() method, and Supabase integration",
+      "parent": "Core Python Package",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Package Architecture",
+      "purpose": "Explain the internal package organization, module structure, and design patterns",
+      "parent": "Core Python Package",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "API Infrastructure",
+      "purpose": "Overview of the distributed API architecture spanning Render and Hugging Face",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "API Gateway Architecture",
+      "purpose": "Explain the primary API on Render, model routing, and endpoint distribution across Hugging Face Spaces",
+      "parent": "API Infrastructure",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Multi-Language Access",
+      "purpose": "Document how to access npmai from Java, C++, JavaScript, and C with code examples",
+      "parent": "API Infrastructure",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Request & Response Formats",
+      "purpose": "Define the JSON schema for LLM requests and responses, including optional validated_schema parameter",
+      "parent": "API Infrastructure",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Failover & High Availability",
+      "purpose": "Explain the dual-gateway pattern, fallback mechanisms, and model-specific Hugging Face endpoints",
+      "parent": "API Infrastructure",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "RAG Framework Service",
+      "purpose": "Comprehensive guide to the NPMRAG-API-Framework deployed on Hugging Face Spaces",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Framework Overview",
+      "purpose": "High-level architecture of the RAG framework, its FastAPI endpoints, and integration points",
+      "parent": "RAG Framework Service",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Document Processing Pipeline",
+      "purpose": "Detail the file-to-text conversion for PDFs, images, videos, audio, and YouTube links using Tesseract, Whisper, and other tools",
+      "parent": "RAG Framework Service",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Vector Database & Retrieval",
+      "purpose": "Explain FAISS indexing, text splitting, embedding generation, and similarity search",
+      "parent": "RAG Framework Service",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Supabase Integration",
+      "purpose": "Document the persistent vector storage on Supabase, including public/private storage modes and upload/download workflows",
+      "parent": "RAG Framework Service",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "RAG Service Deployment",
+      "purpose": "Cover Docker configuration, entrypoint script, Ollama setup, and model pulling for the RAG service",
+      "parent": "RAG Framework Service",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Backend Services",
+      "purpose": "Overview of specialized backend services supporting the npmai ecosystem",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Models Service",
+      "purpose": "Document the Ollama-based LLM serving service: architecture, model loading, FastAPI endpoints, and deployment",
+      "parent": "Backend Services",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Render Layer Service",
+      "purpose": "Explain the PDF/OCR processing service: LLM request routing, PDF text extraction, and OCR capabilities",
+      "parent": "Backend Services",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Advanced Features",
+      "purpose": "Cover advanced usage patterns and integrations for power users",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Schema Validation",
+      "purpose": "Demonstrate validated_schema parameter for enforcing JSON output structures from LLMs",
+      "parent": "Advanced Features",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "LangChain Integration",
+      "purpose": "Explain how npmai integrates with LangChain framework and extends langchain_core.language_models.llms.LLM",
+      "parent": "Advanced Features",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Memory & Conversation Patterns",
+      "purpose": "Advanced patterns for using Memory class in multi-turn conversations and agent workflows",
+      "parent": "Advanced Features",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Deployment & Infrastructure",
+      "purpose": "Comprehensive deployment guide covering Docker, environment variables, and production hosting",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Docker Architecture",
+      "purpose": "Explain the ollama/ollama base image, multi-stage builds, and container configuration patterns",
+      "parent": "Deployment & Infrastructure",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    }
+  ]
+}
