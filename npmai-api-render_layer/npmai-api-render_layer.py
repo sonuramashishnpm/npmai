@@ -18,8 +18,8 @@ class LLMRequest(BaseModel):
 Model_in_Use=[]
 
 Model_links = {
-    "llama3.2": "https://sonuramashish22028704-npmai.hf.space/llm",
-    "qwen2.5-coder:7b":"https://sonuramashish22028704-npmai.hf.space/qwen",
+    "llama3.2": "https://sonuramashishnpm-npmai.hf.space/llm",
+    "qwen2.5-coder:7b":"https://sonuramashishnpm-npmai.hf.space/qwen",
     "vicuna:7b":"https://sonuramashish22028704-vicuna7b.hf.space/llm",
     "gemma3:12b":"https://sonuramashish22028704-vicuna7b.hf.space/gemma",
     "internlm2:7b":"https://sonuramashish22028704-internlm27b.hf.space/llm",
