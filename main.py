@@ -18,8 +18,8 @@ class LLMRequest(BaseModel):
 Model_in_Use=[]
 
 Model_links = {
-    "llama3.2": "https://sonuramashish22028704-npmai.hf.space/llm",
-    "qwen2.5-coder:7b":"https://sonuramashish22028704-npmai.hf.space/qwen",
+    "llama3.2": "https://sonuramashishnpm-npmai.hf.space/llm",
+    "qwen2.5-coder:7b":"https://sonuramashishnpm-npmai.hf.space/qwen",
     "vicuna:7b":"https://sonuramashish22028704-vicuna7b.hf.space/llm",
     "gemma2:9b":"https://sonuramashish22028704-vicuna7b.hf.space/gemma",
     "internlm2:7b":"https://sonuramashish22028704-internlm27b.hf.space/llm",
@@ -106,18 +106,3 @@ async def handler(data: LLMRequest):
                     raise HTTPException(500, f"LLM output invalid: {raw_output}") # No schema, return raw
                 
                 return {"response": raw_output}
-
-@app.post("/uploadfile")
-async def create_upload_file(file: UploadFile):
-    path = await file.read()
-    doc = fitz.open(stream=path,filetype="pdf")
-    text = []
-    for p in doc:
-        t = p.get_text().strip()
-        if t:
-            text.append(t)
-    if text:
-        return "\n".join(text)
-    images = convert_from_bytes(path)
-    return "\n".join(pytesseract.image_to_string(img) for img in images)
-    
