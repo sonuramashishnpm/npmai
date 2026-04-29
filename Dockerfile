@@ -3,14 +3,6 @@ FROM python:3.11-slim
 ENV PYTHONUNBUFFERED=1
 
 RUN apt-get update && apt-get install -y \
-    tesseract-ocr \
-    libtesseract-dev \
-    poppler-utils \
-    tesseract-ocr-eng \
-    libsm6 \
-    libxext6 \
-    libxrender-dev \
-    ghostscript \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
