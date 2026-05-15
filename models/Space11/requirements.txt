@@ -1,0 +1,12 @@
+fastapi
+supabase
+npmai
+uvicorn
+uuid
+python-multipart
+pydantic
+langchain
+langchain-ollama
+langchain-community
+ddgs
+tavily-python
