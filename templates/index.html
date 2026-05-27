@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NPMAI ECOSYSTEM — Open Source AI Research & Development Community</title>
+<link rel="icon" type="image/x-icon" href="npmai.png">
 
 <!-- SEO Meta Tags -->
 <meta name="description" content="NPMAI ECOSYSTEM is an open-source AI research and development community founded by Sonu Kumar (Bihar Viral Boy). 45+ LLMs, RAG pipeline, civic AI tools. pip install npmai. Free forever.">
@@ -154,6 +155,18 @@ code, pre { font-family: var(--font-mono); }
   position: sticky; top: 0; height: 100vh;
   overflow-y: auto; z-index: 100;
 }
+
+.logo-image {
+  height: 42px;
+  width: 200px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  transition: transform 0.2s;
+}
+
+.logo-image:hover {
+  transform: scale(1.05);
+}
+
 .sidebar-logo { padding: 24px 20px 20px; border-bottom: 1px solid var(--border); }
 .logo-mark { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
 .logo-icon {
@@ -168,7 +181,7 @@ code, pre { font-family: var(--font-mono); }
   50% { box-shadow: 0 0 0 8px rgba(124,107,242,0); }
 }
 .logo-name { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--text); letter-spacing: -0.02em; }
-.logo-sub { font-size: 11px; color: var(--text3); margin-left: 42px; }
+.logo-sub { font-size: 11px; color: var(--text3); margin-left: 15px; margin-top:15px; }
 .sidebar-nav { flex: 1; padding: 12px 0; }
 .nav-section { padding: 16px 20px 6px; }
 .nav-section-label { font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--text3); }
@@ -558,10 +571,9 @@ code, pre { font-family: var(--font-mono); }
 <aside class="sidebar" role="navigation" aria-label="Main navigation">
   <div class="sidebar-logo">
     <div class="logo-mark">
-      <div class="logo-icon" aria-hidden="true">n</div>
-      <div class="logo-name">npmai</div>
-    </div>
-    <div class="logo-sub">Open Source R&D Community</div>
+  <img src="npmai.png" alt="NPMAI" class="logo-image">
+</div>
+<div class="logo-sub">Open Source R&D Community</div>
   </div>
   <nav class="sidebar-nav">
     <div class="nav-section">
@@ -1093,7 +1105,7 @@ const ECOSYSTEM_DATA = [
       <div class="modal-section">
         <div class="modal-section-title">Stats</div>
         <div class="modal-stat-row">
-          <div class="modal-stat"><div class="modal-stat-num">700K+</div><div class="modal-stat-lbl">Downloads</div></div>
+          <div class="modal-stat"><div class="modal-stat-num">1.5 Million+</div><div class="modal-stat-lbl">Downloads</div></div>
           <div class="modal-stat"><div class="modal-stat-num">45+</div><div class="modal-stat-lbl">LLM models</div></div>
           <div class="modal-stat"><div class="modal-stat-num">$0</div><div class="modal-stat-lbl">Cost to use</div></div>
         </div>
